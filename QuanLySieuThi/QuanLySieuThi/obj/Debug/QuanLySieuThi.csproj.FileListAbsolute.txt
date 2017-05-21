@@ -100,5 +100,8 @@ C:\Users\Administrator\Documents\GitHub\QuanLySieuThi\QuanLySieuThi\QuanLySieuTh
 C:\Users\Administrator\Documents\GitHub\QuanLySieuThi\QuanLySieuThi\QuanLySieuThi\obj\Debug\QuanLySieuThi.View.frmTrangChu.resources
 C:\Users\Administrator\Documents\GitHub\QuanLySieuThi\QuanLySieuThi\QuanLySieuThi\obj\Debug\QuanLySieuThi.csproj.GenerateResource.Cache
 C:\Users\Administrator\Documents\GitHub\QuanLySieuThi\QuanLySieuThi\QuanLySieuThi\obj\Debug\QuanLySieuThi.exe.licenses
+<<<<<<< HEAD
 C:\Users\Administrator\Documents\GitHub\QuanLySieuThi\QuanLySieuThi\QuanLySieuThi\obj\Debug\QuanLySieuThi.View.Sua_NV.resources
 C:\Users\Administrator\Documents\GitHub\QuanLySieuThi\QuanLySieuThi\QuanLySieuThi\obj\Debug\QuanLySieuThi.View.frm_themnv.resources
+=======
+>>>>>>> origin/master
