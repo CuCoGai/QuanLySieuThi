@@ -16,9 +16,9 @@ namespace QuanLySieuThi.Model
     {
         public HangHoa()
         {
+            this.ChiTietDonHangs = new HashSet<ChiTietDonHang>();
             this.ChiTietNhaps = new HashSet<ChiTietNhap>();
             this.ChiTietXuats = new HashSet<ChiTietXuat>();
-            this.ChiTietDonHangs = new HashSet<ChiTietDonHang>();
         }
     
         public int MaLoai { get; set; }
@@ -28,10 +28,13 @@ namespace QuanLySieuThi.Model
         public string TenNhaSanXuat { get; set; }
         public Nullable<decimal> Gia { get; set; }
         public Nullable<int> Status { get; set; }
+        public Nullable<System.DateTime> NgaySx { get; set; }
+        public Nullable<System.DateTime> HanSd { get; set; }
+        public Nullable<int> SoLuong { get; set; }
     
+        public virtual ICollection<ChiTietDonHang> ChiTietDonHangs { get; set; }
         public virtual ICollection<ChiTietNhap> ChiTietNhaps { get; set; }
         public virtual ICollection<ChiTietXuat> ChiTietXuats { get; set; }
         public virtual LoaiHang LoaiHang { get; set; }
-        public virtual ICollection<ChiTietDonHang> ChiTietDonHangs { get; set; }
     }
 }

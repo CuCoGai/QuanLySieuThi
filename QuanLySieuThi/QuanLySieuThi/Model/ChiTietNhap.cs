@@ -19,8 +19,6 @@ namespace QuanLySieuThi.Model
         public Nullable<int> MaHang { get; set; }
         public Nullable<long> SoLuong { get; set; }
         public Nullable<decimal> GiaNhap { get; set; }
-        public Nullable<System.DateTime> NgaySx { get; set; }
-        public Nullable<System.DateTime> HanSd { get; set; }
         public Nullable<int> Status { get; set; }
     
         public virtual HangHoa HangHoa { get; set; }
