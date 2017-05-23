@@ -75,6 +75,7 @@
             this.grb_thongtinnhanvien.TabIndex = 2;
             this.grb_thongtinnhanvien.TabStop = false;
             this.grb_thongtinnhanvien.Text = "Thông tin nhân viên";
+            this.grb_thongtinnhanvien.Enter += new System.EventHandler(this.grb_thongtinnhanvien_Enter);
             // 
             // txt_tendn
             // 
