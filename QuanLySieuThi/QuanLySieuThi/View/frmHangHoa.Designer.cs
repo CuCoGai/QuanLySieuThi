@@ -33,14 +33,14 @@
             this.btnSua = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
-            this.btnTimkiem = new System.Windows.Forms.Button();
             this.txtTimkiem = new System.Windows.Forms.TextBox();
             this.grbThongtinhanghoa = new System.Windows.Forms.GroupBox();
+            this.cmbDonvitinh = new System.Windows.Forms.ComboBox();
             this.dtpHansudung = new System.Windows.Forms.DateTimePicker();
             this.dtpNgaysanxuat = new System.Windows.Forms.DateTimePicker();
             this.txtSoluong = new System.Windows.Forms.TextBox();
             this.txtTrangthai = new System.Windows.Forms.TextBox();
-            this.txtGia = new System.Windows.Forms.TextBox();
+            this.txtGiaban = new System.Windows.Forms.TextBox();
             this.txtTennhasanxuat = new System.Windows.Forms.TextBox();
             this.txtTenhang = new System.Windows.Forms.TextBox();
             this.txtMahang = new System.Windows.Forms.TextBox();
@@ -49,7 +49,7 @@
             this.lbHansudung = new System.Windows.Forms.Label();
             this.lbNgaysx = new System.Windows.Forms.Label();
             this.lbTrangthai = new System.Windows.Forms.Label();
-            this.lbGia = new System.Windows.Forms.Label();
+            this.lbGiaban = new System.Windows.Forms.Label();
             this.lbTennhasanxuat = new System.Windows.Forms.Label();
             this.lbDonvitinh = new System.Windows.Forms.Label();
             this.lbTenhang = new System.Windows.Forms.Label();
@@ -57,7 +57,9 @@
             this.lbMaloai = new System.Windows.Forms.Label();
             this.grbTimKiem = new System.Windows.Forms.GroupBox();
             this.dgvHanghoa = new System.Windows.Forms.DataGridView();
-            this.cmbDonvitinh = new System.Windows.Forms.ComboBox();
+            this.txtGiasi = new System.Windows.Forms.TextBox();
+            this.lbGiasi = new System.Windows.Forms.Label();
+            this.lbTimKiem = new System.Windows.Forms.Label();
             this.grbThongtinhanghoa.SuspendLayout();
             this.grbTimKiem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHanghoa)).BeginInit();
@@ -65,58 +67,56 @@
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(99, 199);
+            this.btnThem.Location = new System.Drawing.Point(99, 215);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(100, 31);
             this.btnThem.TabIndex = 20;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(262, 199);
+            this.btnSua.Location = new System.Drawing.Point(264, 215);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(100, 31);
             this.btnSua.TabIndex = 21;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(433, 199);
+            this.btnXoa.Location = new System.Drawing.Point(433, 215);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(100, 31);
             this.btnXoa.TabIndex = 22;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnThoat
             // 
-            this.btnThoat.Location = new System.Drawing.Point(605, 199);
+            this.btnThoat.Location = new System.Drawing.Point(606, 215);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(100, 31);
             this.btnThoat.TabIndex = 23;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = true;
-            // 
-            // btnTimkiem
-            // 
-            this.btnTimkiem.Location = new System.Drawing.Point(99, 19);
-            this.btnTimkiem.Name = "btnTimkiem";
-            this.btnTimkiem.Size = new System.Drawing.Size(100, 31);
-            this.btnTimkiem.TabIndex = 24;
-            this.btnTimkiem.Text = "Tìm Kiếm";
-            this.btnTimkiem.UseVisualStyleBackColor = true;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // txtTimkiem
             // 
-            this.txtTimkiem.Location = new System.Drawing.Point(223, 25);
+            this.txtTimkiem.Location = new System.Drawing.Point(181, 25);
             this.txtTimkiem.Name = "txtTimkiem";
             this.txtTimkiem.Size = new System.Drawing.Size(388, 20);
             this.txtTimkiem.TabIndex = 25;
+            this.txtTimkiem.TextChanged += new System.EventHandler(this.txtTimkiem_TextChanged);
             // 
             // grbThongtinhanghoa
             // 
+            this.grbThongtinhanghoa.Controls.Add(this.txtGiasi);
+            this.grbThongtinhanghoa.Controls.Add(this.lbGiasi);
             this.grbThongtinhanghoa.Controls.Add(this.cmbDonvitinh);
             this.grbThongtinhanghoa.Controls.Add(this.dtpHansudung);
             this.grbThongtinhanghoa.Controls.Add(this.dtpNgaysanxuat);
@@ -124,7 +124,7 @@
             this.grbThongtinhanghoa.Controls.Add(this.btnThoat);
             this.grbThongtinhanghoa.Controls.Add(this.txtTrangthai);
             this.grbThongtinhanghoa.Controls.Add(this.btnXoa);
-            this.grbThongtinhanghoa.Controls.Add(this.txtGia);
+            this.grbThongtinhanghoa.Controls.Add(this.txtGiaban);
             this.grbThongtinhanghoa.Controls.Add(this.btnSua);
             this.grbThongtinhanghoa.Controls.Add(this.txtTennhasanxuat);
             this.grbThongtinhanghoa.Controls.Add(this.btnThem);
@@ -135,7 +135,7 @@
             this.grbThongtinhanghoa.Controls.Add(this.lbHansudung);
             this.grbThongtinhanghoa.Controls.Add(this.lbNgaysx);
             this.grbThongtinhanghoa.Controls.Add(this.lbTrangthai);
-            this.grbThongtinhanghoa.Controls.Add(this.lbGia);
+            this.grbThongtinhanghoa.Controls.Add(this.lbGiaban);
             this.grbThongtinhanghoa.Controls.Add(this.lbTennhasanxuat);
             this.grbThongtinhanghoa.Controls.Add(this.lbDonvitinh);
             this.grbThongtinhanghoa.Controls.Add(this.lbTenhang);
@@ -147,6 +147,14 @@
             this.grbThongtinhanghoa.TabIndex = 26;
             this.grbThongtinhanghoa.TabStop = false;
             this.grbThongtinhanghoa.Text = "Thông Tin Hàng Hóa";
+            // 
+            // cmbDonvitinh
+            // 
+            this.cmbDonvitinh.FormattingEnabled = true;
+            this.cmbDonvitinh.Location = new System.Drawing.Point(181, 115);
+            this.cmbDonvitinh.Name = "cmbDonvitinh";
+            this.cmbDonvitinh.Size = new System.Drawing.Size(221, 21);
+            this.cmbDonvitinh.TabIndex = 40;
             // 
             // dtpHansudung
             // 
@@ -176,12 +184,12 @@
             this.txtTrangthai.Size = new System.Drawing.Size(222, 20);
             this.txtTrangthai.TabIndex = 36;
             // 
-            // txtGia
+            // txtGiaban
             // 
-            this.txtGia.Location = new System.Drawing.Point(570, 27);
-            this.txtGia.Name = "txtGia";
-            this.txtGia.Size = new System.Drawing.Size(222, 20);
-            this.txtGia.TabIndex = 35;
+            this.txtGiaban.Location = new System.Drawing.Point(570, 27);
+            this.txtGiaban.Name = "txtGiaban";
+            this.txtGiaban.Size = new System.Drawing.Size(222, 20);
+            this.txtGiaban.TabIndex = 35;
             // 
             // txtTennhasanxuat
             // 
@@ -247,14 +255,14 @@
             this.lbTrangthai.TabIndex = 26;
             this.lbTrangthai.Text = "Trạng Thái";
             // 
-            // lbGia
+            // lbGiaban
             // 
-            this.lbGia.AutoSize = true;
-            this.lbGia.Location = new System.Drawing.Point(480, 30);
-            this.lbGia.Name = "lbGia";
-            this.lbGia.Size = new System.Drawing.Size(23, 13);
-            this.lbGia.TabIndex = 25;
-            this.lbGia.Text = "Giá";
+            this.lbGiaban.AutoSize = true;
+            this.lbGiaban.Location = new System.Drawing.Point(480, 30);
+            this.lbGiaban.Name = "lbGiaban";
+            this.lbGiaban.Size = new System.Drawing.Size(45, 13);
+            this.lbGiaban.TabIndex = 25;
+            this.lbGiaban.Text = "Giá Bán";
             // 
             // lbTennhasanxuat
             // 
@@ -303,8 +311,8 @@
             // 
             // grbTimKiem
             // 
+            this.grbTimKiem.Controls.Add(this.lbTimKiem);
             this.grbTimKiem.Controls.Add(this.dgvHanghoa);
-            this.grbTimKiem.Controls.Add(this.btnTimkiem);
             this.grbTimKiem.Controls.Add(this.txtTimkiem);
             this.grbTimKiem.Location = new System.Drawing.Point(4, 272);
             this.grbTimKiem.Name = "grbTimKiem";
@@ -319,14 +327,32 @@
             this.dgvHanghoa.Name = "dgvHanghoa";
             this.dgvHanghoa.Size = new System.Drawing.Size(821, 194);
             this.dgvHanghoa.TabIndex = 26;
+            this.dgvHanghoa.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHanghoa_CellContentClick);
             // 
-            // cmbDonvitinh
+            // txtGiasi
             // 
-            this.cmbDonvitinh.FormattingEnabled = true;
-            this.cmbDonvitinh.Location = new System.Drawing.Point(181, 115);
-            this.cmbDonvitinh.Name = "cmbDonvitinh";
-            this.cmbDonvitinh.Size = new System.Drawing.Size(221, 21);
-            this.cmbDonvitinh.TabIndex = 40;
+            this.txtGiasi.Location = new System.Drawing.Point(181, 180);
+            this.txtGiasi.Name = "txtGiasi";
+            this.txtGiasi.Size = new System.Drawing.Size(222, 20);
+            this.txtGiasi.TabIndex = 42;
+            // 
+            // lbGiasi
+            // 
+            this.lbGiasi.AutoSize = true;
+            this.lbGiasi.Location = new System.Drawing.Point(68, 183);
+            this.lbGiasi.Name = "lbGiasi";
+            this.lbGiasi.Size = new System.Drawing.Size(35, 13);
+            this.lbGiasi.TabIndex = 41;
+            this.lbGiasi.Text = "Giá Sỉ";
+            // 
+            // lbTimKiem
+            // 
+            this.lbTimKiem.AutoSize = true;
+            this.lbTimKiem.Location = new System.Drawing.Point(114, 28);
+            this.lbTimKiem.Name = "lbTimKiem";
+            this.lbTimKiem.Size = new System.Drawing.Size(50, 13);
+            this.lbTimKiem.TabIndex = 27;
+            this.lbTimKiem.Text = "Tìm Kiếm";
             // 
             // frmHangHoa
             // 
@@ -339,6 +365,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmHangHoa";
             this.Text = "QUẢN LÝ HÀNG HÓA";
+            this.Load += new System.EventHandler(this.frmHangHoa_Load);
             this.grbThongtinhanghoa.ResumeLayout(false);
             this.grbThongtinhanghoa.PerformLayout();
             this.grbTimKiem.ResumeLayout(false);
@@ -354,7 +381,6 @@
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnThoat;
-        private System.Windows.Forms.Button btnTimkiem;
         private System.Windows.Forms.TextBox txtTimkiem;
         private System.Windows.Forms.GroupBox grbThongtinhanghoa;
         private System.Windows.Forms.ComboBox cmbDonvitinh;
@@ -362,7 +388,7 @@
         private System.Windows.Forms.DateTimePicker dtpNgaysanxuat;
         private System.Windows.Forms.TextBox txtSoluong;
         private System.Windows.Forms.TextBox txtTrangthai;
-        private System.Windows.Forms.TextBox txtGia;
+        private System.Windows.Forms.TextBox txtGiaban;
         private System.Windows.Forms.TextBox txtTennhasanxuat;
         private System.Windows.Forms.TextBox txtTenhang;
         private System.Windows.Forms.TextBox txtMahang;
@@ -371,7 +397,7 @@
         private System.Windows.Forms.Label lbHansudung;
         private System.Windows.Forms.Label lbNgaysx;
         private System.Windows.Forms.Label lbTrangthai;
-        private System.Windows.Forms.Label lbGia;
+        private System.Windows.Forms.Label lbGiaban;
         private System.Windows.Forms.Label lbTennhasanxuat;
         private System.Windows.Forms.Label lbDonvitinh;
         private System.Windows.Forms.Label lbTenhang;
@@ -379,5 +405,8 @@
         private System.Windows.Forms.Label lbMaloai;
         private System.Windows.Forms.GroupBox grbTimKiem;
         private System.Windows.Forms.DataGridView dgvHanghoa;
+        private System.Windows.Forms.TextBox txtGiasi;
+        private System.Windows.Forms.Label lbGiasi;
+        private System.Windows.Forms.Label lbTimKiem;
     }
 }

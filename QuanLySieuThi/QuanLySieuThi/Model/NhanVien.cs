@@ -28,6 +28,8 @@ namespace QuanLySieuThi.Model
         public Nullable<bool> GioiTinh { get; set; }
         public Nullable<System.DateTime> NgaySinh { get; set; }
         public Nullable<int> Status { get; set; }
+        public string TenDangNhap { get; set; }
+        public string MatKhau { get; set; }
     
         public virtual ChucVu ChucVu { get; set; }
         public virtual ICollection<PhieuNhap> PhieuNhaps { get; set; }

@@ -18,8 +18,6 @@
     <Property Name="MaHang" Type="int" />
     <Property Name="SoLuong" Type="bigint" />
     <Property Name="GiaNhap" Type="money" />
-    <Property Name="NgaySx" Type="datetime" />
-    <Property Name="HanSd" Type="datetime" />
     <Property Name="Status" Type="int" />
   </EntityType>
   <EntityType Name="ChiTietXuat">
@@ -74,6 +72,10 @@
     <Property Name="TenNhaSanXuat" Type="ntext" />
     <Property Name="Gia" Type="money" />
     <Property Name="Status" Type="int" />
+    <Property Name="NgaySx" Type="datetime" />
+    <Property Name="HanSd" Type="datetime" />
+    <Property Name="SoLuong" Type="int" />
+    <Property Name="GiaSi" Type="money" />
   </EntityType>
   <EntityType Name="KhachHang">
     <Key>
@@ -105,6 +107,8 @@
     <Property Name="GioiTinh" Type="bit" />
     <Property Name="NgaySinh" Type="datetime" />
     <Property Name="Status" Type="int" />
+    <Property Name="TenDangNhap" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="MatKhau" Type="varchar" MaxLength="20" Nullable="false" />
   </EntityType>
   <EntityType Name="PhieuNhap">
     <Key>
@@ -134,17 +138,7 @@
     <Property Name="TongTien" Type="money" />
     <Property Name="Status" Type="int" />
   </EntityType>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-    <Property Name="principal_id" Type="int" Nullable="false" />
-    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="version" Type="int" />
-    <Property Name="definition" Type="varbinary(max)" />
-  </EntityType>
-  <Association Name="FK__ChiTietDo__MaDon__3F115E1A">
+  <Association Name="FK__ChiTietDo__MaDon__25869641">
     <End Role="DonHang" Type="Self.DonHang" Multiplicity="1" />
     <End Role="ChiTietDonHang" Type="Self.ChiTietDonHang" Multiplicity="0..1" />
     <ReferentialConstraint>
@@ -156,7 +150,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__ChiTietDo__MaHan__40058253">
+  <Association Name="FK__ChiTietDo__MaHan__267ABA7A">
     <End Role="HangHoa" Type="Self.HangHoa" Multiplicity="0..1" />
     <End Role="ChiTietDonHang" Type="Self.ChiTietDonHang" Multiplicity="*" />
     <ReferentialConstraint>
@@ -168,7 +162,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__ChiTietNh__MaHan__2CF2ADDF">
+  <Association Name="FK__ChiTietNh__MaHan__276EDEB3">
     <End Role="HangHoa" Type="Self.HangHoa" Multiplicity="0..1" />
     <End Role="ChiTietNhap" Type="Self.ChiTietNhap" Multiplicity="*" />
     <ReferentialConstraint>
@@ -180,7 +174,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__ChiTietNh__MaLoa__2BFE89A6">
+  <Association Name="FK__ChiTietNh__MaLoa__286302EC">
     <End Role="LoaiHang" Type="Self.LoaiHang" Multiplicity="0..1" />
     <End Role="ChiTietNhap" Type="Self.ChiTietNhap" Multiplicity="*" />
     <ReferentialConstraint>
@@ -192,7 +186,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__ChiTietNh__MaPhi__2B0A656D">
+  <Association Name="FK__ChiTietNh__MaPhi__29572725">
     <End Role="PhieuNhap" Type="Self.PhieuNhap" Multiplicity="1" />
     <End Role="ChiTietNhap" Type="Self.ChiTietNhap" Multiplicity="0..1" />
     <ReferentialConstraint>
@@ -204,7 +198,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__ChiTietXu__MaHan__31B762FC">
+  <Association Name="FK__ChiTietXu__MaHan__2A4B4B5E">
     <End Role="HangHoa" Type="Self.HangHoa" Multiplicity="0..1" />
     <End Role="ChiTietXuat" Type="Self.ChiTietXuat" Multiplicity="*" />
     <ReferentialConstraint>
@@ -216,7 +210,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__ChiTietXu__MaLoa__30C33EC3">
+  <Association Name="FK__ChiTietXu__MaLoa__2B3F6F97">
     <End Role="LoaiHang" Type="Self.LoaiHang" Multiplicity="0..1" />
     <End Role="ChiTietXuat" Type="Self.ChiTietXuat" Multiplicity="*" />
     <ReferentialConstraint>
@@ -228,7 +222,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__ChiTietXu__MaPhi__2FCF1A8A">
+  <Association Name="FK__ChiTietXu__MaPhi__2C3393D0">
     <End Role="PhieuXuat" Type="Self.PhieuXuat" Multiplicity="1" />
     <End Role="ChiTietXuat" Type="Self.ChiTietXuat" Multiplicity="0..1" />
     <ReferentialConstraint>
@@ -240,7 +234,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__DonHang__MaKh__3C34F16F">
+  <Association Name="FK__DonHang__MaKh__2D27B809">
     <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="0..1" />
     <End Role="DonHang" Type="Self.DonHang" Multiplicity="*" />
     <ReferentialConstraint>
@@ -252,7 +246,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__HangHoa__MaLoai__14270015">
+  <Association Name="FK__HangHoa__MaLoai__2E1BDC42">
     <End Role="LoaiHang" Type="Self.LoaiHang" Multiplicity="1" />
     <End Role="HangHoa" Type="Self.HangHoa" Multiplicity="*" />
     <ReferentialConstraint>
@@ -264,7 +258,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__NhanVien__MaChuc__276EDEB3">
+  <Association Name="FK__NhanVien__MaChuc__2F10007B">
     <End Role="ChucVu" Type="Self.ChucVu" Multiplicity="0..1" />
     <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="*" />
     <ReferentialConstraint>
@@ -276,7 +270,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__PhieuNhap__MaDoi__2D27B809">
+  <Association Name="FK__PhieuNhap__MaDoi__300424B4">
     <End Role="DoiTac" Type="Self.DoiTac" Multiplicity="0..1" />
     <End Role="PhieuNhap" Type="Self.PhieuNhap" Multiplicity="*" />
     <ReferentialConstraint>
@@ -288,7 +282,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__PhieuNhap__MaNv__2C3393D0">
+  <Association Name="FK__PhieuNhap__MaNv__30F848ED">
     <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="0..1" />
     <End Role="PhieuNhap" Type="Self.PhieuNhap" Multiplicity="*" />
     <ReferentialConstraint>
@@ -300,7 +294,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__PhieuXuat__MaKh__30F848ED">
+  <Association Name="FK__PhieuXuat__MaKh__31EC6D26">
     <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="0..1" />
     <End Role="PhieuXuat" Type="Self.PhieuXuat" Multiplicity="*" />
     <ReferentialConstraint>
@@ -312,7 +306,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__PhieuXuat__MaNv__300424B4">
+  <Association Name="FK__PhieuXuat__MaNv__32E0915F">
     <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="0..1" />
     <End Role="PhieuXuat" Type="Self.PhieuXuat" Multiplicity="*" />
     <ReferentialConstraint>
@@ -324,37 +318,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
-  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-    <Parameter Name="version" Type="int" Mode="In" />
-    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
-  </Function>
-  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-    <Parameter Name="version" Type="int" Mode="In" />
-    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
-  </Function>
-  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
-  </Function>
-  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <EntityContainer Name="BANHANGSIEUTHIModelStoreContainer">
     <EntitySet Name="ChiTietDonHang" EntityType="Self.ChiTietDonHang" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ChiTietNhap" EntityType="Self.ChiTietNhap" Schema="dbo" store:Type="Tables" />
@@ -368,64 +331,63 @@
     <EntitySet Name="NhanVien" EntityType="Self.NhanVien" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PhieuNhap" EntityType="Self.PhieuNhap" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PhieuXuat" EntityType="Self.PhieuXuat" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK__ChiTietDo__MaDon__3F115E1A" Association="Self.FK__ChiTietDo__MaDon__3F115E1A">
+    <AssociationSet Name="FK__ChiTietDo__MaDon__25869641" Association="Self.FK__ChiTietDo__MaDon__25869641">
       <End Role="DonHang" EntitySet="DonHang" />
       <End Role="ChiTietDonHang" EntitySet="ChiTietDonHang" />
     </AssociationSet>
-    <AssociationSet Name="FK__ChiTietDo__MaHan__40058253" Association="Self.FK__ChiTietDo__MaHan__40058253">
+    <AssociationSet Name="FK__ChiTietDo__MaHan__267ABA7A" Association="Self.FK__ChiTietDo__MaHan__267ABA7A">
       <End Role="HangHoa" EntitySet="HangHoa" />
       <End Role="ChiTietDonHang" EntitySet="ChiTietDonHang" />
     </AssociationSet>
-    <AssociationSet Name="FK__ChiTietNh__MaHan__2CF2ADDF" Association="Self.FK__ChiTietNh__MaHan__2CF2ADDF">
+    <AssociationSet Name="FK__ChiTietNh__MaHan__276EDEB3" Association="Self.FK__ChiTietNh__MaHan__276EDEB3">
       <End Role="HangHoa" EntitySet="HangHoa" />
       <End Role="ChiTietNhap" EntitySet="ChiTietNhap" />
     </AssociationSet>
-    <AssociationSet Name="FK__ChiTietNh__MaLoa__2BFE89A6" Association="Self.FK__ChiTietNh__MaLoa__2BFE89A6">
+    <AssociationSet Name="FK__ChiTietNh__MaLoa__286302EC" Association="Self.FK__ChiTietNh__MaLoa__286302EC">
       <End Role="LoaiHang" EntitySet="LoaiHang" />
       <End Role="ChiTietNhap" EntitySet="ChiTietNhap" />
     </AssociationSet>
-    <AssociationSet Name="FK__ChiTietNh__MaPhi__2B0A656D" Association="Self.FK__ChiTietNh__MaPhi__2B0A656D">
+    <AssociationSet Name="FK__ChiTietNh__MaPhi__29572725" Association="Self.FK__ChiTietNh__MaPhi__29572725">
       <End Role="PhieuNhap" EntitySet="PhieuNhap" />
       <End Role="ChiTietNhap" EntitySet="ChiTietNhap" />
     </AssociationSet>
-    <AssociationSet Name="FK__ChiTietXu__MaHan__31B762FC" Association="Self.FK__ChiTietXu__MaHan__31B762FC">
+    <AssociationSet Name="FK__ChiTietXu__MaHan__2A4B4B5E" Association="Self.FK__ChiTietXu__MaHan__2A4B4B5E">
       <End Role="HangHoa" EntitySet="HangHoa" />
       <End Role="ChiTietXuat" EntitySet="ChiTietXuat" />
     </AssociationSet>
-    <AssociationSet Name="FK__ChiTietXu__MaLoa__30C33EC3" Association="Self.FK__ChiTietXu__MaLoa__30C33EC3">
+    <AssociationSet Name="FK__ChiTietXu__MaLoa__2B3F6F97" Association="Self.FK__ChiTietXu__MaLoa__2B3F6F97">
       <End Role="LoaiHang" EntitySet="LoaiHang" />
       <End Role="ChiTietXuat" EntitySet="ChiTietXuat" />
     </AssociationSet>
-    <AssociationSet Name="FK__ChiTietXu__MaPhi__2FCF1A8A" Association="Self.FK__ChiTietXu__MaPhi__2FCF1A8A">
+    <AssociationSet Name="FK__ChiTietXu__MaPhi__2C3393D0" Association="Self.FK__ChiTietXu__MaPhi__2C3393D0">
       <End Role="PhieuXuat" EntitySet="PhieuXuat" />
       <End Role="ChiTietXuat" EntitySet="ChiTietXuat" />
     </AssociationSet>
-    <AssociationSet Name="FK__DonHang__MaKh__3C34F16F" Association="Self.FK__DonHang__MaKh__3C34F16F">
+    <AssociationSet Name="FK__DonHang__MaKh__2D27B809" Association="Self.FK__DonHang__MaKh__2D27B809">
       <End Role="KhachHang" EntitySet="KhachHang" />
       <End Role="DonHang" EntitySet="DonHang" />
     </AssociationSet>
-    <AssociationSet Name="FK__HangHoa__MaLoai__14270015" Association="Self.FK__HangHoa__MaLoai__14270015">
+    <AssociationSet Name="FK__HangHoa__MaLoai__2E1BDC42" Association="Self.FK__HangHoa__MaLoai__2E1BDC42">
       <End Role="LoaiHang" EntitySet="LoaiHang" />
       <End Role="HangHoa" EntitySet="HangHoa" />
     </AssociationSet>
-    <AssociationSet Name="FK__NhanVien__MaChuc__276EDEB3" Association="Self.FK__NhanVien__MaChuc__276EDEB3">
+    <AssociationSet Name="FK__NhanVien__MaChuc__2F10007B" Association="Self.FK__NhanVien__MaChuc__2F10007B">
       <End Role="ChucVu" EntitySet="ChucVu" />
       <End Role="NhanVien" EntitySet="NhanVien" />
     </AssociationSet>
-    <AssociationSet Name="FK__PhieuNhap__MaDoi__2D27B809" Association="Self.FK__PhieuNhap__MaDoi__2D27B809">
+    <AssociationSet Name="FK__PhieuNhap__MaDoi__300424B4" Association="Self.FK__PhieuNhap__MaDoi__300424B4">
       <End Role="DoiTac" EntitySet="DoiTac" />
       <End Role="PhieuNhap" EntitySet="PhieuNhap" />
     </AssociationSet>
-    <AssociationSet Name="FK__PhieuNhap__MaNv__2C3393D0" Association="Self.FK__PhieuNhap__MaNv__2C3393D0">
+    <AssociationSet Name="FK__PhieuNhap__MaNv__30F848ED" Association="Self.FK__PhieuNhap__MaNv__30F848ED">
       <End Role="NhanVien" EntitySet="NhanVien" />
       <End Role="PhieuNhap" EntitySet="PhieuNhap" />
     </AssociationSet>
-    <AssociationSet Name="FK__PhieuXuat__MaKh__30F848ED" Association="Self.FK__PhieuXuat__MaKh__30F848ED">
+    <AssociationSet Name="FK__PhieuXuat__MaKh__31EC6D26" Association="Self.FK__PhieuXuat__MaKh__31EC6D26">
       <End Role="KhachHang" EntitySet="KhachHang" />
       <End Role="PhieuXuat" EntitySet="PhieuXuat" />
     </AssociationSet>
-    <AssociationSet Name="FK__PhieuXuat__MaNv__300424B4" Association="Self.FK__PhieuXuat__MaNv__300424B4">
+    <AssociationSet Name="FK__PhieuXuat__MaNv__32E0915F" Association="Self.FK__PhieuXuat__MaNv__32E0915F">
       <End Role="NhanVien" EntitySet="NhanVien" />
       <End Role="PhieuXuat" EntitySet="PhieuXuat" />
     </AssociationSet>

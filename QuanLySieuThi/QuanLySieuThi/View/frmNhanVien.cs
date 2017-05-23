@@ -13,7 +13,7 @@ namespace QuanLySieuThi.View
 {
     public partial class frmNhanVien : Form
     {
-        BANHANGSIEUTHIEntities db=new BANHANGSIEUTHIEntities();
+        BANHANGSIEUTHIEntities1 db=new BANHANGSIEUTHIEntities1();
         public frmNhanVien()
         {
             InitializeComponent();
