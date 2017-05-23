@@ -16,5 +16,10 @@ namespace QuanLySieuThi.View
         {
             InitializeComponent();
         }
+
+        private void btn_showDT_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
