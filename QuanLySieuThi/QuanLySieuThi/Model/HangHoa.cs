@@ -31,6 +31,7 @@ namespace QuanLySieuThi.Model
         public Nullable<System.DateTime> NgaySx { get; set; }
         public Nullable<System.DateTime> HanSd { get; set; }
         public Nullable<int> SoLuong { get; set; }
+        public Nullable<decimal> GiaSi { get; set; }
     
         public virtual ICollection<ChiTietDonHang> ChiTietDonHangs { get; set; }
         public virtual ICollection<ChiTietNhap> ChiTietNhaps { get; set; }

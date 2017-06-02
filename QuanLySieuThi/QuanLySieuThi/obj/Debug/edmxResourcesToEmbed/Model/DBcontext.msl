@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="BANHANGSIEUTHIModelStoreContainer" CdmEntityContainer="BANHANGSIEUTHIEntities">
+  <EntityContainerMapping StorageEntityContainer="BANHANGSIEUTHIModelStoreContainer" CdmEntityContainer="BANHANGSIEUTHIEntities1">
     <EntitySetMapping Name="ChiTietDonHangs">
       <EntityTypeMapping TypeName="BANHANGSIEUTHIModel.ChiTietDonHang">
         <MappingFragment StoreEntitySet="ChiTietDonHang">
@@ -81,6 +81,7 @@
           <ScalarProperty Name="NgaySx" ColumnName="NgaySx" />
           <ScalarProperty Name="HanSd" ColumnName="HanSd" />
           <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+          <ScalarProperty Name="GiaSi" ColumnName="GiaSi" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -107,7 +108,6 @@
     <EntitySetMapping Name="NhanViens">
       <EntityTypeMapping TypeName="BANHANGSIEUTHIModel.NhanVien">
         <MappingFragment StoreEntitySet="NhanVien">
-          <ScalarProperty Name="anh" ColumnName="anh" />
           <ScalarProperty Name="MaNv" ColumnName="MaNv" />
           <ScalarProperty Name="TenNv" ColumnName="TenNv" />
           <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />

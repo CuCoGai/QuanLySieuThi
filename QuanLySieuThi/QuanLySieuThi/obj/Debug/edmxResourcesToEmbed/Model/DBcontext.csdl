@@ -87,6 +87,7 @@
     <Property Name="NgaySx" Type="DateTime" Precision="3" />
     <Property Name="HanSd" Type="DateTime" Precision="3" />
     <Property Name="SoLuong" Type="Int32" />
+    <Property Name="GiaSi" Type="Decimal" Precision="19" Scale="4" />
     <NavigationProperty Name="ChiTietDonHangs" Relationship="Self.FK__ChiTietDo__MaHan__267ABA7A" FromRole="HangHoa" ToRole="ChiTietDonHang" />
     <NavigationProperty Name="ChiTietNhaps" Relationship="Self.FK__ChiTietNh__MaHan__276EDEB3" FromRole="HangHoa" ToRole="ChiTietNhap" />
     <NavigationProperty Name="ChiTietXuats" Relationship="Self.FK__ChiTietXu__MaHan__2A4B4B5E" FromRole="HangHoa" ToRole="ChiTietXuat" />
@@ -132,7 +133,6 @@
     <NavigationProperty Name="ChucVu" Relationship="Self.FK__NhanVien__MaChuc__2F10007B" FromRole="NhanVien" ToRole="ChucVu" />
     <NavigationProperty Name="PhieuNhaps" Relationship="Self.FK__PhieuNhap__MaNv__30F848ED" FromRole="NhanVien" ToRole="PhieuNhap" />
     <NavigationProperty Name="PhieuXuats" Relationship="Self.FK__PhieuXuat__MaNv__32E0915F" FromRole="NhanVien" ToRole="PhieuXuat" />
-    <Property Name="anh" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
   <EntityType Name="PhieuNhap">
     <Key>
@@ -348,7 +348,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="BANHANGSIEUTHIEntities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="BANHANGSIEUTHIEntities1" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="ChiTietDonHangs" EntityType="Self.ChiTietDonHang" />
     <EntitySet Name="ChiTietNhaps" EntityType="Self.ChiTietNhap" />
     <EntitySet Name="ChiTietXuats" EntityType="Self.ChiTietXuat" />

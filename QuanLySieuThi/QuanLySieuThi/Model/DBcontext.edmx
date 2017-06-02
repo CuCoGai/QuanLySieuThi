@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="BANHANGSIEUTHIModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="BANHANGSIEUTHIModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="ChiTietDonHang">
           <Key>
             <PropertyRef Name="MaDon" />
@@ -80,6 +80,7 @@
           <Property Name="NgaySx" Type="datetime" />
           <Property Name="HanSd" Type="datetime" />
           <Property Name="SoLuong" Type="int" />
+          <Property Name="GiaSi" Type="money" />
         </EntityType>
         <EntityType Name="KhachHang">
           <Key>
@@ -113,7 +114,6 @@
           <Property Name="Status" Type="int" />
           <Property Name="TenDangNhap" Type="varchar" MaxLength="250" Nullable="false" />
           <Property Name="MatKhau" Type="varchar" MaxLength="20" Nullable="false" />
-          <Property Name="anh" Type="image" />
         </EntityType>
         <EntityType Name="PhieuNhap">
           <Key>
@@ -397,7 +397,8 @@
             <End Role="PhieuXuat" EntitySet="PhieuXuat" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="BANHANGSIEUTHIModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -488,6 +489,7 @@
           <Property Name="NgaySx" Type="DateTime" Precision="3" />
           <Property Name="HanSd" Type="DateTime" Precision="3" />
           <Property Name="SoLuong" Type="Int32" />
+          <Property Name="GiaSi" Type="Decimal" Precision="19" Scale="4" />
           <NavigationProperty Name="ChiTietDonHangs" Relationship="Self.FK__ChiTietDo__MaHan__267ABA7A" FromRole="HangHoa" ToRole="ChiTietDonHang" />
           <NavigationProperty Name="ChiTietNhaps" Relationship="Self.FK__ChiTietNh__MaHan__276EDEB3" FromRole="HangHoa" ToRole="ChiTietNhap" />
           <NavigationProperty Name="ChiTietXuats" Relationship="Self.FK__ChiTietXu__MaHan__2A4B4B5E" FromRole="HangHoa" ToRole="ChiTietXuat" />
@@ -533,7 +535,6 @@
           <NavigationProperty Name="ChucVu" Relationship="Self.FK__NhanVien__MaChuc__2F10007B" FromRole="NhanVien" ToRole="ChucVu" />
           <NavigationProperty Name="PhieuNhaps" Relationship="Self.FK__PhieuNhap__MaNv__30F848ED" FromRole="NhanVien" ToRole="PhieuNhap" />
           <NavigationProperty Name="PhieuXuats" Relationship="Self.FK__PhieuXuat__MaNv__32E0915F" FromRole="NhanVien" ToRole="PhieuXuat" />
-          <Property Name="anh" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <EntityType Name="PhieuNhap">
           <Key>
@@ -749,7 +750,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="BANHANGSIEUTHIEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="BANHANGSIEUTHIEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="ChiTietDonHangs" EntityType="Self.ChiTietDonHang" />
           <EntitySet Name="ChiTietNhaps" EntityType="Self.ChiTietNhap" />
           <EntitySet Name="ChiTietXuats" EntityType="Self.ChiTietXuat" />
@@ -828,7 +829,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="BANHANGSIEUTHIModelStoreContainer" CdmEntityContainer="BANHANGSIEUTHIEntities">
+        <EntityContainerMapping StorageEntityContainer="BANHANGSIEUTHIModelStoreContainer" CdmEntityContainer="BANHANGSIEUTHIEntities1">
           <EntitySetMapping Name="ChiTietDonHangs">
             <EntityTypeMapping TypeName="BANHANGSIEUTHIModel.ChiTietDonHang">
               <MappingFragment StoreEntitySet="ChiTietDonHang">
@@ -909,6 +910,7 @@
                 <ScalarProperty Name="NgaySx" ColumnName="NgaySx" />
                 <ScalarProperty Name="HanSd" ColumnName="HanSd" />
                 <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+                <ScalarProperty Name="GiaSi" ColumnName="GiaSi" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -935,7 +937,6 @@
           <EntitySetMapping Name="NhanViens">
             <EntityTypeMapping TypeName="BANHANGSIEUTHIModel.NhanVien">
               <MappingFragment StoreEntitySet="NhanVien">
-                <ScalarProperty Name="anh" ColumnName="anh" />
                 <ScalarProperty Name="MaNv" ColumnName="MaNv" />
                 <ScalarProperty Name="TenNv" ColumnName="TenNv" />
                 <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />

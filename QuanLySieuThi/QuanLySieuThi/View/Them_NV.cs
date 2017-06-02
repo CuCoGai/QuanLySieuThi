@@ -92,6 +92,11 @@ namespace QuanLySieuThi.View
 
             }
         }
+
+        private void grb_thongtinnhanvien_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
