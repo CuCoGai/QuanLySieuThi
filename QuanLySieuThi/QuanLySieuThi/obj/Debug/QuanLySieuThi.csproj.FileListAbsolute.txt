@@ -46,3 +46,6 @@ E:\HVKTQS\KI 2 2017\Thực tập nhóm_TH13\QuanLySieuThi\QuanLySieuThi\QuanLySi
 E:\HVKTQS\KI 2 2017\Thực tập nhóm_TH13\QuanLySieuThi\QuanLySieuThi\QuanLySieuThi\obj\Debug\QuanLySieuThi.exe.licenses
 E:\HVKTQS\KI 2 2017\Thực tập nhóm_TH13\QuanLySieuThi\QuanLySieuThi\QuanLySieuThi\obj\Debug\QuanLySieuThi.exe
 E:\HVKTQS\KI 2 2017\Thực tập nhóm_TH13\QuanLySieuThi\QuanLySieuThi\QuanLySieuThi\obj\Debug\QuanLySieuThi.pdb
+C:\Users\Administrator\Documents\GitHub\QuanLySieuThi\QuanLySieuThi\QuanLySieuThi\bin\Debug\QuanLySieuThi.exe.config
+C:\Users\Administrator\Documents\GitHub\QuanLySieuThi\QuanLySieuThi\QuanLySieuThi\obj\Debug\QuanLySieuThi.exe
+C:\Users\Administrator\Documents\GitHub\QuanLySieuThi\QuanLySieuThi\QuanLySieuThi\obj\Debug\QuanLySieuThi.pdb
