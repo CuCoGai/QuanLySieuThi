@@ -12,15 +12,12 @@ namespace QuanLySieuThi.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class ChiTietNhap
+    public partial class sysdiagram
     {
-        public int MaPhieu { get; set; }
-        public int MaHang { get; set; }
-        public Nullable<long> SoLuong { get; set; }
-        public Nullable<decimal> GiaNhap { get; set; }
-        public Nullable<bool> Status { get; set; }
-    
-        public virtual HangHoa HangHoa { get; set; }
-        public virtual PhieuNhap PhieuNhap { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

@@ -15,14 +15,12 @@ namespace QuanLySieuThi.Model
     public partial class ChiTietXuat
     {
         public int MaPhieu { get; set; }
-        public Nullable<int> MaLoai { get; set; }
-        public Nullable<int> MaHang { get; set; }
+        public int MaHang { get; set; }
         public Nullable<long> SoLuong { get; set; }
         public Nullable<decimal> GiaXuat { get; set; }
-        public Nullable<int> Status { get; set; }
+        public Nullable<bool> Status { get; set; }
     
         public virtual HangHoa HangHoa { get; set; }
-        public virtual LoaiHang LoaiHang { get; set; }
         public virtual PhieuXuat PhieuXuat { get; set; }
     }
 }

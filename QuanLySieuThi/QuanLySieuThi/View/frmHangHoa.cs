@@ -13,7 +13,7 @@ namespace QuanLySieuThi.View
 {
     public partial class frmHangHoa : Form
     {
-        BANHANGSIEUTHIEntities1 db = new BANHANGSIEUTHIEntities1();
+        BANHANGSIEUTHIEntities db = new BANHANGSIEUTHIEntities();
 
         public frmHangHoa()
         {
@@ -159,7 +159,7 @@ namespace QuanLySieuThi.View
 
         private void txtTimkiem_TextChanged(object sender, EventArgs e)
         {
-            BANHANGSIEUTHIEntities1 db = new BANHANGSIEUTHIEntities1();
+            BANHANGSIEUTHIEntities db = new BANHANGSIEUTHIEntities();
             var Lst = (from s in db.HangHoas where s.TenHang.Contains(txtTimkiem.Text) select s).ToList();
             dgvHanghoa.DataSource = Lst;
             txtMahang.DataBindings.Clear();

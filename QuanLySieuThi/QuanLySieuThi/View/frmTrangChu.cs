@@ -65,7 +65,7 @@ namespace QuanLySieuThi.View
 
         private void linkKho_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            frmKho f=new frmKho();
+            cobTk f=new cobTk();
             f.Show();
             this.Hide();
         }
