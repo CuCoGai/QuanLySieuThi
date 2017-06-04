@@ -3,6 +3,7 @@
  output extension=".cs"#><#
 
 const string inputFile = @"DBcontext.edmx";
+
 var textTransform = DynamicTextTransformation.Create(this);
 var code = new CodeGenerationTools(this);
 var ef = new MetadataTools(this);

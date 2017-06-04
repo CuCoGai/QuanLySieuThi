@@ -209,12 +209,21 @@
     <EmbeddedResource Include="View\frmTrangChu.resx">
       <DependentUpon>frmTrangChu.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
     <EntityDeploy Include="Model\DBcontext.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>DBcontext.Designer.cs</LastGenOutput>
     </EntityDeploy>
     <None Include="Model\DBcontext.edmx.diagram">
       <DependentUpon>DBcontext.edmx</DependentUpon>
+=======
+    <EntityDeploy Include="Model\DbContext.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DbContext.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model\DbContext.edmx.diagram">
+      <DependentUpon>DbContext.edmx</DependentUpon>
+>>>>>>> origin/master
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -233,7 +242,9 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
+<<<<<<< HEAD
     <Content Include="Model\DBcontext.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>DBcontext.edmx</DependentUpon>
@@ -243,6 +254,17 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>DBcontext.edmx</DependentUpon>
       <LastGenOutput>DBcontext.cs</LastGenOutput>
+=======
+    <Content Include="Model\DbContext.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DbContext.edmx</DependentUpon>
+      <LastGenOutput>DbContext.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\DbContext.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DbContext.edmx</DependentUpon>
+      <LastGenOutput>DbContext.cs</LastGenOutput>
+>>>>>>> origin/master
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

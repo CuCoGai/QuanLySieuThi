@@ -31,6 +31,7 @@
         <AssociationConnector Association="BANHANGSIEUTHIModel.FK__HangHoa__MaLoai__14270015" ManuallyRouted="false" />
         <AssociationConnector Association="BANHANGSIEUTHIModel.FK__PhieuNhap__MaNv__756D6ECB" ManuallyRouted="false" />
         <AssociationConnector Association="BANHANGSIEUTHIModel.FK__PhieuXuat__MaNv__793DFFAF" ManuallyRouted="false" />
+
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

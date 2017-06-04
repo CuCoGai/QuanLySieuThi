@@ -103,3 +103,4 @@ D:\hoctap\Git Hub\QuanLySieuThi\QuanLySieuThi\QuanLySieuThi\obj\Debug\QuanLySieu
 D:\hoctap\Git Hub\QuanLySieuThi\QuanLySieuThi\QuanLySieuThi\obj\Debug\QuanLySieuThi.csproj.GenerateResource.Cache
 D:\hoctap\Git Hub\QuanLySieuThi\QuanLySieuThi\QuanLySieuThi\obj\Debug\QuanLySieuThi.exe.licenses
 D:\hoctap\Git Hub\QuanLySieuThi\QuanLySieuThi\QuanLySieuThi\obj\Debug\QuanLySieuThi.View.cobTk.resources
+
