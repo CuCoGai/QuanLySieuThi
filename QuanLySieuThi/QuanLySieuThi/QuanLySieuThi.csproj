@@ -48,6 +48,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
@@ -62,55 +63,76 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\ChiTietDonHang.cs">
-      <DependentUpon>DbContext.tt</DependentUpon>
+      <DependentUpon>DBcontext.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\ChiTietNhap.cs">
-      <DependentUpon>DbContext.tt</DependentUpon>
+      <DependentUpon>DBcontext.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\ChiTietXuat.cs">
-      <DependentUpon>DbContext.tt</DependentUpon>
+      <DependentUpon>DBcontext.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\ChucVu.cs">
-      <DependentUpon>DbContext.tt</DependentUpon>
+      <DependentUpon>DBcontext.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\DbContext.Context.cs">
+    <Compile Include="Model\DBcontext.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DbContext.Context.tt</DependentUpon>
+      <DependentUpon>DBcontext.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\DbContext.cs">
+    <Compile Include="Model\DBcontext.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DbContext.tt</DependentUpon>
+      <DependentUpon>DBcontext.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\DbContext.Designer.cs">
+    <Compile Include="Model\DBcontext.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DbContext.edmx</DependentUpon>
+      <DependentUpon>DBcontext.edmx</DependentUpon>
     </Compile>
     <Compile Include="Model\DoiTac.cs">
-      <DependentUpon>DbContext.tt</DependentUpon>
+      <DependentUpon>DBcontext.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\DonHang.cs">
-      <DependentUpon>DbContext.tt</DependentUpon>
+      <DependentUpon>DBcontext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DsPhieuNhap_Result.cs">
+      <DependentUpon>DBcontext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DsPhieuXuat_Result.cs">
+      <DependentUpon>DBcontext.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\HangHoa.cs">
-      <DependentUpon>DbContext.tt</DependentUpon>
+      <DependentUpon>DBcontext.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\KhachHang.cs">
-      <DependentUpon>DbContext.tt</DependentUpon>
+      <DependentUpon>DBcontext.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\LoaiHang.cs">
-      <DependentUpon>DbContext.tt</DependentUpon>
+      <DependentUpon>DBcontext.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\NhanVien.cs">
-      <DependentUpon>DbContext.tt</DependentUpon>
+      <DependentUpon>DBcontext.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\PhieuNhap.cs">
-      <DependentUpon>DbContext.tt</DependentUpon>
+      <DependentUpon>DBcontext.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\PhieuXuat.cs">
-      <DependentUpon>DbContext.tt</DependentUpon>
+      <DependentUpon>DBcontext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\procChiTietNhap_Result.cs">
+      <DependentUpon>DBcontext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\procChiTietXuat_Result.cs">
+      <DependentUpon>DBcontext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>DBcontext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sp_helpdiagrams_Result.cs">
+      <DependentUpon>DBcontext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sysdiagram.cs">
+      <DependentUpon>DBcontext.tt</DependentUpon>
     </Compile>
     <Compile Include="View\frmBanHang.cs">
       <SubType>Form</SubType>
@@ -187,12 +209,21 @@
     <EmbeddedResource Include="View\frmTrangChu.resx">
       <DependentUpon>frmTrangChu.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
+    <EntityDeploy Include="Model\DBcontext.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DBcontext.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model\DBcontext.edmx.diagram">
+      <DependentUpon>DBcontext.edmx</DependentUpon>
+=======
     <EntityDeploy Include="Model\DbContext.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>DbContext.Designer.cs</LastGenOutput>
     </EntityDeploy>
     <None Include="Model\DbContext.edmx.diagram">
       <DependentUpon>DbContext.edmx</DependentUpon>
+>>>>>>> origin/master
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -213,6 +244,17 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+<<<<<<< HEAD
+    <Content Include="Model\DBcontext.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DBcontext.edmx</DependentUpon>
+      <LastGenOutput>DBcontext.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\DBcontext.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DBcontext.edmx</DependentUpon>
+      <LastGenOutput>DBcontext.cs</LastGenOutput>
+=======
     <Content Include="Model\DbContext.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>DbContext.edmx</DependentUpon>
@@ -222,6 +264,7 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>DbContext.edmx</DependentUpon>
       <LastGenOutput>DbContext.cs</LastGenOutput>
+>>>>>>> origin/master
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

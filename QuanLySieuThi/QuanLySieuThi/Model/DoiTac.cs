@@ -17,6 +17,7 @@ namespace QuanLySieuThi.Model
         public DoiTac()
         {
             this.PhieuNhaps = new HashSet<PhieuNhap>();
+            this.PhieuXuats = new HashSet<PhieuXuat>();
         }
     
         public int MaDoiTac { get; set; }
@@ -29,5 +30,6 @@ namespace QuanLySieuThi.Model
         public Nullable<int> Status { get; set; }
     
         public virtual ICollection<PhieuNhap> PhieuNhaps { get; set; }
+        public virtual ICollection<PhieuXuat> PhieuXuats { get; set; }
     }
 }
