@@ -10,17 +10,10 @@
 namespace QuanLySieuThi.Model
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class ChiTietNhap
+    public partial class sp_helpdiagramdefinition_Result
     {
-        public int MaPhieu { get; set; }
-        public int MaHang { get; set; }
-        public Nullable<long> SoLuong { get; set; }
-        public Nullable<decimal> GiaNhap { get; set; }
-        public Nullable<bool> Status { get; set; }
-    
-        public virtual HangHoa HangHoa { get; set; }
-        public virtual PhieuNhap PhieuNhap { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

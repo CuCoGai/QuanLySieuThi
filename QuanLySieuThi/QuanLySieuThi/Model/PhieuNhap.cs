@@ -14,17 +14,24 @@ namespace QuanLySieuThi.Model
     
     public partial class PhieuNhap
     {
+        public PhieuNhap()
+        {
+            this.ChiTietNhaps = new HashSet<ChiTietNhap>();
+        }
+    
         public int MaPhieu { get; set; }
         public string MaHienThi { get; set; }
         public Nullable<int> MaNv { get; set; }
         public Nullable<int> MaDoiTac { get; set; }
         public Nullable<System.DateTime> NgayNhap { get; set; }
         public Nullable<decimal> TienHang { get; set; }
+        public Nullable<decimal> ChietKhau { get; set; }
         public Nullable<decimal> ThueVat { get; set; }
         public Nullable<decimal> TongTien { get; set; }
-        public Nullable<int> Status { get; set; }
+        public Nullable<bool> Status { get; set; }
+        public string GhiChu { get; set; }
     
-        public virtual ChiTietNhap ChiTietNhap { get; set; }
+        public virtual ICollection<ChiTietNhap> ChiTietNhaps { get; set; }
         public virtual DoiTac DoiTac { get; set; }
         public virtual NhanVien NhanVien { get; set; }
     }
