@@ -20,9 +20,11 @@ namespace QuanLySieuThi.View
         public Sua_NV(int id)
         {
             InitializeComponent();
+
             NhanVien nv = db.NhanViens.Single(s => s.MaNv == id);
             try
             {
+
                 string path = nv.anh.ToString();
                 if (!string.IsNullOrWhiteSpace(path))
                 {
@@ -37,6 +39,7 @@ namespace QuanLySieuThi.View
             }
 
             txt_manv.Text = nv.MaNv.ToString();
+
             txt_hoten.Text = nv.TenNv;
             txt_diachi.Text = nv.DiaChi;
             if (nv.GioiTinh.Value == false)
@@ -49,6 +52,7 @@ namespace QuanLySieuThi.View
             }
             dtk_ngaysinh.Text = nv.NgaySinh.ToString();
             var chucvu = from s in db.ChucVus where s.MaChucVu == nv.MaChucVu select s.ChucVu1;
+
             cmb_chucvu.Text = chucvu.FirstOrDefault();
         }
         public void load()
@@ -57,16 +61,16 @@ namespace QuanLySieuThi.View
             cmb_gioitinh.Items.Add("Nam");
             cmb_gioitinh.Items.Add("Nữ");
             cmb_chucvu.Items.Clear();
-            var list1 = (from s in db.ChucVus select s.ChucVu1).ToList();
+
+            var list = (from s in db.ChucVus select s.ChucVu1).ToList();
             cmb_chucvu.DisplayMember = "ChucVu1";
-            cmb_chucvu.DataSource = list1;
+            cmb_chucvu.DataSource = list;
           
         }
         private void Sua_NV_Load(object sender, EventArgs e)
         {
             load();
         }
-
         private void btn_ok_Click(object sender, EventArgs e)
         {
 
@@ -88,7 +92,6 @@ namespace QuanLySieuThi.View
             try {
                 MemoryStream str1 = new MemoryStream();
                 ptb_anh.Image.Save(str1, System.Drawing.Imaging.ImageFormat.Jpeg);
-
                 byte[] pic = str1.ToArray();
                 nv.anh = pic;
             }
@@ -125,6 +128,7 @@ namespace QuanLySieuThi.View
 
         private void btn_brown_Click(object sender, EventArgs e)
         {
+
             OpenFileDialog openfile = new OpenFileDialog();
             openfile.Filter = openfile.Filter = "JPG file(*.jpg)|*.jpg|All files (*.*)|*.*";
             openfile.FilterIndex = 1;
