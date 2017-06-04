@@ -750,7 +750,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="BANHANGSIEUTHIEntities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="BANHANGSIEUTHIEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="ChiTietDonHangs" EntityType="Self.ChiTietDonHang" />
           <EntitySet Name="ChiTietNhaps" EntityType="Self.ChiTietNhap" />
           <EntitySet Name="ChiTietXuats" EntityType="Self.ChiTietXuat" />
@@ -829,7 +829,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="BANHANGSIEUTHIModelStoreContainer" CdmEntityContainer="BANHANGSIEUTHIEntities1">
+        <EntityContainerMapping StorageEntityContainer="BANHANGSIEUTHIModelStoreContainer" CdmEntityContainer="BANHANGSIEUTHIEntities">
           <EntitySetMapping Name="ChiTietDonHangs">
             <EntityTypeMapping TypeName="BANHANGSIEUTHIModel.ChiTietDonHang">
               <MappingFragment StoreEntitySet="ChiTietDonHang">

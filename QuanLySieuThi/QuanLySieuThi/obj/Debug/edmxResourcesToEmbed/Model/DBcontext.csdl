@@ -348,7 +348,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="BANHANGSIEUTHIEntities1" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="BANHANGSIEUTHIEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="ChiTietDonHangs" EntityType="Self.ChiTietDonHang" />
     <EntitySet Name="ChiTietNhaps" EntityType="Self.ChiTietNhap" />
     <EntitySet Name="ChiTietXuats" EntityType="Self.ChiTietXuat" />

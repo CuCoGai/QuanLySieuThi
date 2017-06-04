@@ -13,10 +13,10 @@ namespace QuanLySieuThi.Model
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class BANHANGSIEUTHIEntities1 : DbContext
+    public partial class BANHANGSIEUTHIEntities : DbContext
     {
-        public BANHANGSIEUTHIEntities1()
-            : base("name=BANHANGSIEUTHIEntities1")
+        public BANHANGSIEUTHIEntities()
+            : base("name=BANHANGSIEUTHIEntities")
         {
         }
     
