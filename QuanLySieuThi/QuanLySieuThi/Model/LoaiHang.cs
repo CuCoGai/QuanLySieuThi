@@ -16,8 +16,6 @@ namespace QuanLySieuThi.Model
     {
         public LoaiHang()
         {
-            this.ChiTietNhaps = new HashSet<ChiTietNhap>();
-            this.ChiTietXuats = new HashSet<ChiTietXuat>();
             this.HangHoas = new HashSet<HangHoa>();
         }
     
@@ -25,8 +23,6 @@ namespace QuanLySieuThi.Model
         public string DienGiai { get; set; }
         public Nullable<int> Status { get; set; }
     
-        public virtual ICollection<ChiTietNhap> ChiTietNhaps { get; set; }
-        public virtual ICollection<ChiTietXuat> ChiTietXuats { get; set; }
         public virtual ICollection<HangHoa> HangHoas { get; set; }
     }
 }

@@ -18,7 +18,7 @@ namespace QuanLySieuThi.View
             InitializeComponent();
         }
 
-        BANHANGSIEUTHIEntities1 db = new BANHANGSIEUTHIEntities1();
+        BANHANGSIEUTHIEntities db = new BANHANGSIEUTHIEntities();
 
         #region method
         private void LoadData()
