@@ -13,7 +13,7 @@ namespace QuanLySieuThi.View
 {
     public partial class frmHangHoa : Form
     {
-        BANHANGSIEUTHIEntities1 db = new BANHANGSIEUTHIEntities1();
+        BANHANGSIEUTHIEntities db = new BANHANGSIEUTHIEntities();
 
         public frmHangHoa()
         {
@@ -23,13 +23,40 @@ namespace QuanLySieuThi.View
         private void frmHangHoa_Load(object sender, EventArgs e)
         {
             FillData();
+        
+               
+           
         }
 
         public void FillData()
         {
-            this.dgvHanghoa.DataSource = db.HangHoas.ToList();
-            this.dgvHanghoa.Columns[0].HeaderText = "Mã Hàng";
-            this.dgvHanghoa.Columns[1].HeaderText = "Mã loại";
+            cmbMaLoai.DataSource = db.LoaiHangs.ToList();
+            cmbMaLoai.ValueMember = "MaLoai";
+            cmbMaLoai.DisplayMember = "DienGiai";
+
+            cmbDonvitinh.Items.Clear();
+            cmbDonvitinh.Items.Add("Bao");
+            cmbDonvitinh.Items.Add("Hộp");
+            cmbDonvitinh.Items.Add("Gói");
+            cmbDonvitinh.Items.Add("Túi");
+            cmbDonvitinh.Items.Add("Vỉ");
+            cmbDonvitinh.Items.Add("Cái");
+
+            dgvHanghoa.DataSource = db.HangHoas.Select(d=>new {
+                Maloai=d.MaLoai,
+                Mahang=d.MaHang,
+                Tenhang=d.TenHang,
+                Donvitinh=d.DonViTinh,
+                TenNSX=d.TenNhaSanXuat,
+                Giasi=d.GiaSi,
+                Giaban=d.Gia,
+                Trangthai=d.Status,
+                Ngaysanxuat=d.NgaySx,
+                Hansudung=d.HanSd,
+                Soluong=d.SoLuong
+            }).ToList();
+            this.dgvHanghoa.Columns[0].HeaderText = "Mã Loại";
+            this.dgvHanghoa.Columns[1].HeaderText = "Mã Hàng";
             this.dgvHanghoa.Columns[2].HeaderText = "Tên Hàng";
             this.dgvHanghoa.Columns[3].HeaderText = "Đơn Vị Tính";
             this.dgvHanghoa.Columns[4].HeaderText = "Tên Nhà Xuất Bản";
@@ -39,51 +66,56 @@ namespace QuanLySieuThi.View
             this.dgvHanghoa.Columns[8].HeaderText = "Ngày Sản Xuất";
             this.dgvHanghoa.Columns[9].HeaderText = "Hạn Sử Dụng";
             this.dgvHanghoa.Columns[10].HeaderText = "Số Lượng";
+
         }
 
         private void dgvHanghoa_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            String ma = this.dgvHanghoa.CurrentRow.Cells[0].Value.ToString();
-            HangHoa h= db.HangHoas.Single(s => s.MaHang.Equals(ma));
-            txtMahang.Text = h.MaHang.ToString();
-            txtMaloai.Text = h.MaLoai.ToString();
-            txtTenhang.Text = h.TenHang;
-            cmbDonvitinh.Items.Clear();
-            cmbDonvitinh.Items.Add("Bao");
-            cmbDonvitinh.Items.Add("Hộp");
-            cmbDonvitinh.Items.Add("Gói");
-            cmbDonvitinh.Items.Add("Túi");
-            cmbDonvitinh.Items.Add("Vỉ");
-            cmbDonvitinh.Items.Add("Cái");
-            txtTennhasanxuat.Text = h.TenNhaSanXuat;
-            txtGiasi.Text = h.GiaSi.ToString();
-            txtGiaban.Text = h.Gia.ToString();
-            txtTrangthai.Text = h.Status.ToString();
-            dtpNgaysanxuat.Text = h.NgaySx.ToString();
-            dtpHansudung.Text = h.HanSd.ToString();
-            txtSoluong.Text = h.SoLuong.ToString();
+         //   int maHang = int.Parse(this.dgvHanghoa.CurrentRow.Cells[0].Value.ToString());
+            int maHang = int.Parse(this.dgvHanghoa.CurrentRow.Cells[1].Value.ToString());
+            try
+                {
+                    var h = db.HangHoas.Where(s => s.MaHang == maHang).FirstOrDefault();
+                    cmbMaLoai.SelectedItem = h.MaLoai;
+                    txtMahang.Text = h.MaHang.ToString();
+                    txtTenhang.Text = h.TenHang;
+                    cmbDonvitinh.Text = h.DonViTinh;
+                    txtTennhasanxuat.Text = h.TenNhaSanXuat;
+                    txtGiasi.Text = h.GiaSi.ToString();
+                    txtGiaban.Text = h.Gia.ToString();
+                    txtTrangthai.Text = h.Status.ToString();
+                    dtpNgaysanxuat.Text = h.NgaySx.ToString();
+                    dtpHansudung.Text = h.HanSd.ToString();
+                    txtSoluong.Text = h.SoLuong.ToString();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Loi " + ex);
+                }
+           
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            try
-            {
+
+            try { 
                 HangHoa h = new HangHoa();
-                h.MaHang = Int32.Parse(txtMahang.Text);
-                h.MaLoai = Int32.Parse(txtMaloai.Text);
+
+               // h.MaHang = Int32.Parse(txtMahang.Text);
+                h.MaLoai = Int32.Parse(cmbMaLoai.SelectedValue.ToString());
                 h.TenHang = this.txtTenhang.Text;
                 h.DonViTinh = this.cmbDonvitinh.Text;
                 h.TenNhaSanXuat = this.txtTennhasanxuat.Text;
                 h.GiaSi = decimal.Parse(txtGiasi.Text);
                 h.Gia = decimal.Parse(txtGiaban.Text);
-                h.Status = Int32.Parse(txtTrangthai.Text);
+                h.Status = 1;
                 h.NgaySx = DateTime.Parse(dtpNgaysanxuat.Text);
                 h.HanSd = DateTime.Parse(dtpHansudung.Text);
                 h.SoLuong = Int32.Parse(txtSoluong.Text);
                 db.HangHoas.Add(h);
-               db.SaveChanges();
+                db.SaveChanges();
                 FillData();
-                MessageBox.Show("Insert Success!!!");
+
             }
             catch
             {
@@ -96,32 +128,33 @@ namespace QuanLySieuThi.View
         {
             try
             {
-                String ma = this.dgvHanghoa.CurrentRow.Cells[0].Value.ToString();
-                HangHoa h = db.HangHoas.Single(s => s.MaHang.Equals(ma));
-                if (this.txtMahang.Text.Length != 0)
-                    h.MaHang = Int32.Parse(txtMahang.Text);
-                if (this.txtMaloai.Text.Length != 0)
-                    h.MaLoai = Int32.Parse(txtMaloai.Text);
+                int ma = int.Parse(this.dgvHanghoa.CurrentRow.Cells[1].Value.ToString());
+                HangHoa h = db.HangHoas.Where(s => s.MaHang == ma).FirstOrDefault();
+
+                cmbMaLoai.SelectedItem = h.MaLoai;
+                //lay dl tu datagrid leen text
+                //if (dgvHanghoa.SelectedRows[3].Cells["TenHang"].Value != null)
+                //    txtTenhang.Text = dgvHanghoa.SelectedRows[3].Cells["TenHang"].Value.ToString();
                 if (this.txtTenhang.Text.Length != 0)
                     h.TenHang = this.txtTenhang.Text;
                 h.DonViTinh = this.cmbDonvitinh.Text;
                 if (this.txtTennhasanxuat.Text.Length != 0)
                     h.TenNhaSanXuat = this.txtTennhasanxuat.Text;
-                if(this.txtGiasi.Text.Length!=0)
+                if (this.txtGiasi.Text.Length != 0)
                     h.GiaSi = decimal.Parse(txtGiasi.Text);
-                if(this.txtGiaban.Text.Length!=0)
-                    h.Gia= decimal.Parse(txtGiaban.Text);
+                if (this.txtGiaban.Text.Length != 0)
+                    h.Gia = decimal.Parse(txtGiaban.Text);
                 if (this.txtTrangthai.Text.Length != 0)
                     h.Status = Int32.Parse(txtTrangthai.Text);
                 if (this.dtpNgaysanxuat.Text.Length != 0)
                     h.NgaySx = DateTime.Parse(dtpNgaysanxuat.Text);
                 if (this.dtpHansudung.Text.Length != 0)
                     h.HanSd = DateTime.Parse(dtpHansudung.Text);
-                if (this.txtSoluong.Text.Length!=0)
+                if (this.txtSoluong.Text.Length != 0)
                     h.SoLuong = Int32.Parse(txtSoluong.Text);
+
                 db.SaveChanges();
                 FillData();
-                MessageBox.Show("Fix Success!!");
             }
             catch
             {
@@ -131,17 +164,17 @@ namespace QuanLySieuThi.View
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            String ma = this.dgvHanghoa.CurrentRow.Cells[0].Value.ToString();
+            
             DialogResult dr = MessageBox.Show("Are you sure?", "Confirm", MessageBoxButtons.YesNo);
             if (dr == System.Windows.Forms.DialogResult.Yes)
             {
                 try
                 {
-                    HangHoa h = db.HangHoas.Single(s => s.MaHang.Equals(ma));
+                    int ma = int.Parse(this.dgvHanghoa.CurrentRow.Cells[1].Value.ToString());
+                    HangHoa h = db.HangHoas.Where(s => s.MaHang == ma).FirstOrDefault();
                     db.HangHoas.Remove(h);
                     db.SaveChanges();
                     FillData();
-                    MessageBox.Show("Delete Success");
                 }
                 catch
                 {
@@ -159,16 +192,16 @@ namespace QuanLySieuThi.View
 
         private void txtTimkiem_TextChanged(object sender, EventArgs e)
         {
-            BANHANGSIEUTHIEntities1 db = new BANHANGSIEUTHIEntities1();
+            BANHANGSIEUTHIEntities db = new BANHANGSIEUTHIEntities();
             var Lst = (from s in db.HangHoas where s.TenHang.Contains(txtTimkiem.Text) select s).ToList();
             dgvHanghoa.DataSource = Lst;
             txtMahang.DataBindings.Clear();
-            txtMaloai.DataBindings.Clear();
+            cmbMaLoai.DataBindings.Clear();
             txtTenhang.DataBindings.Clear();
             txtTennhasanxuat.DataBindings.Clear();
             txtTrangthai.DataBindings.Clear();
             txtMahang.DataBindings.Add("text", Lst, "MaHang");
-            txtMaloai.DataBindings.Add("text", Lst, "MaLoai");
+            cmbMaLoai.DataBindings.Add("text", Lst, "MaLoai");
             txtTenhang.DataBindings.Add("text", Lst, "TenHang");
             txtTennhasanxuat.DataBindings.Add("text", Lst, "TenNhaSanXuat");
             txtTrangthai.DataBindings.Add("text", Lst, "Status");
