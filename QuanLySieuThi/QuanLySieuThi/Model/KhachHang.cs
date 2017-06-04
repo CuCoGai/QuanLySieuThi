@@ -17,7 +17,6 @@ namespace QuanLySieuThi.Model
         public KhachHang()
         {
             this.DonHangs = new HashSet<DonHang>();
-            this.PhieuXuats = new HashSet<PhieuXuat>();
         }
     
         public int MaKh { get; set; }
@@ -27,6 +26,5 @@ namespace QuanLySieuThi.Model
         public Nullable<int> Status { get; set; }
     
         public virtual ICollection<DonHang> DonHangs { get; set; }
-        public virtual ICollection<PhieuXuat> PhieuXuats { get; set; }
     }
 }
