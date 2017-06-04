@@ -39,12 +39,12 @@
             this.lbl_diachi = new System.Windows.Forms.Label();
             this.txt_hoten = new System.Windows.Forms.TextBox();
             this.lbl_hoten = new System.Windows.Forms.Label();
+            this.txt_manv = new System.Windows.Forms.TextBox();
+            this.lb_manv = new System.Windows.Forms.Label();
             this.btn_brown = new System.Windows.Forms.Button();
             this.ptb_anh = new System.Windows.Forms.PictureBox();
             this.btn_cancel = new System.Windows.Forms.Button();
             this.btn_ok = new System.Windows.Forms.Button();
-            this.txt_manv = new System.Windows.Forms.TextBox();
-            this.lb_manv = new System.Windows.Forms.Label();
             this.grb_thongtinnhanvien.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptb_anh)).BeginInit();
             this.SuspendLayout();
@@ -67,7 +67,7 @@
             this.grb_thongtinnhanvien.Controls.Add(this.ptb_anh);
             this.grb_thongtinnhanvien.Location = new System.Drawing.Point(22, 1);
             this.grb_thongtinnhanvien.Name = "grb_thongtinnhanvien";
-            this.grb_thongtinnhanvien.Size = new System.Drawing.Size(440, 248);
+            this.grb_thongtinnhanvien.Size = new System.Drawing.Size(459, 248);
             this.grb_thongtinnhanvien.TabIndex = 1;
             this.grb_thongtinnhanvien.TabStop = false;
             this.grb_thongtinnhanvien.Text = "Thông tin nhân viên";
@@ -154,6 +154,24 @@
             this.lbl_hoten.TabIndex = 4;
             this.lbl_hoten.Text = "Họ và Tên";
             // 
+            // txt_manv
+            // 
+            this.txt_manv.Location = new System.Drawing.Point(198, 16);
+            this.txt_manv.Name = "txt_manv";
+            this.txt_manv.Size = new System.Drawing.Size(170, 20);
+            this.txt_manv.TabIndex = 3;
+            this.txt_manv.Visible = false;
+            // 
+            // lb_manv
+            // 
+            this.lb_manv.AutoSize = true;
+            this.lb_manv.Location = new System.Drawing.Point(134, 19);
+            this.lb_manv.Name = "lb_manv";
+            this.lb_manv.Size = new System.Drawing.Size(40, 13);
+            this.lb_manv.TabIndex = 2;
+            this.lb_manv.Text = "Mã NV";
+            this.lb_manv.Visible = false;
+            // 
             // btn_brown
             // 
             this.btn_brown.Location = new System.Drawing.Point(15, 116);
@@ -174,7 +192,7 @@
             // 
             // btn_cancel
             // 
-            this.btn_cancel.Location = new System.Drawing.Point(504, 89);
+            this.btn_cancel.Location = new System.Drawing.Point(523, 170);
             this.btn_cancel.Name = "btn_cancel";
             this.btn_cancel.Size = new System.Drawing.Size(75, 23);
             this.btn_cancel.TabIndex = 14;
@@ -184,31 +202,13 @@
             // 
             // btn_ok
             // 
-            this.btn_ok.Location = new System.Drawing.Point(504, 36);
+            this.btn_ok.Location = new System.Drawing.Point(523, 117);
             this.btn_ok.Name = "btn_ok";
             this.btn_ok.Size = new System.Drawing.Size(75, 23);
             this.btn_ok.TabIndex = 2;
             this.btn_ok.Text = "OK";
             this.btn_ok.UseVisualStyleBackColor = true;
             this.btn_ok.Click += new System.EventHandler(this.btn_ok_Click);
-            // 
-            // txt_manv
-            // 
-            this.txt_manv.Location = new System.Drawing.Point(198, 16);
-            this.txt_manv.Name = "txt_manv";
-            this.txt_manv.Size = new System.Drawing.Size(170, 20);
-            this.txt_manv.TabIndex = 3;
-            this.txt_manv.Visible = false;
-            // 
-            // lb_manv
-            // 
-            this.lb_manv.AutoSize = true;
-            this.lb_manv.Location = new System.Drawing.Point(134, 19);
-            this.lb_manv.Name = "lb_manv";
-            this.lb_manv.Size = new System.Drawing.Size(40, 13);
-            this.lb_manv.TabIndex = 2;
-            this.lb_manv.Text = "Mã NV";
-            this.lb_manv.Visible = false;
             // 
             // Sua_NV
             // 
