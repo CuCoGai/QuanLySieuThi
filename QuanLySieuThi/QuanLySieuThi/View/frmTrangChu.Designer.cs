@@ -34,6 +34,7 @@
             this.đăngNhậpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.trợGiúpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đăngXuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.thoátToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.linkDoiTac = new System.Windows.Forms.LinkLabel();
@@ -48,7 +49,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.linkHangHoa = new System.Windows.Forms.LinkLabel();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.thoátToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -77,7 +77,7 @@
             // trangChủToolStripMenuItem
             // 
             this.trangChủToolStripMenuItem.Name = "trangChủToolStripMenuItem";
-            this.trangChủToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
+            this.trangChủToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
             this.trangChủToolStripMenuItem.Text = "Trang chủ";
             this.trangChủToolStripMenuItem.Click += new System.EventHandler(this.trangChủToolStripMenuItem_Click);
             // 
@@ -91,7 +91,7 @@
             // trợGiúpToolStripMenuItem
             // 
             this.trợGiúpToolStripMenuItem.Name = "trợGiúpToolStripMenuItem";
-            this.trợGiúpToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
+            this.trợGiúpToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
             this.trợGiúpToolStripMenuItem.Text = "Trợ giúp";
             this.trợGiúpToolStripMenuItem.Click += new System.EventHandler(this.trợGiúpToolStripMenuItem_Click);
             // 
@@ -100,6 +100,13 @@
             this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
             this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
             this.đăngXuấtToolStripMenuItem.Text = "Đăng xuất";
+            // 
+            // thoátToolStripMenuItem
+            // 
+            this.thoátToolStripMenuItem.Name = "thoátToolStripMenuItem";
+            this.thoátToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
+            this.thoátToolStripMenuItem.Text = "Thoát";
+            this.thoátToolStripMenuItem.Click += new System.EventHandler(this.thoátToolStripMenuItem_Click);
             // 
             // groupBox2
             // 
@@ -116,7 +123,7 @@
             this.groupBox2.Controls.Add(this.linkBanHang);
             this.groupBox2.Controls.Add(this.pictureBox1);
             this.groupBox2.Controls.Add(this.linkHangHoa);
-            this.groupBox2.Font = new System.Drawing.Font("Lucida Handwriting", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.Red;
             this.groupBox2.Location = new System.Drawing.Point(23, 236);
             this.groupBox2.Name = "groupBox2";
@@ -144,7 +151,7 @@
             this.linkDoiTac.LinkColor = System.Drawing.Color.Navy;
             this.linkDoiTac.Location = new System.Drawing.Point(347, 216);
             this.linkDoiTac.Name = "linkDoiTac";
-            this.linkDoiTac.Size = new System.Drawing.Size(72, 21);
+            this.linkDoiTac.Size = new System.Drawing.Size(61, 19);
             this.linkDoiTac.TabIndex = 13;
             this.linkDoiTac.TabStop = true;
             this.linkDoiTac.Text = "Đối tác";
@@ -166,9 +173,9 @@
             this.linkKhachHang.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.linkKhachHang.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.linkKhachHang.LinkColor = System.Drawing.Color.Navy;
-            this.linkKhachHang.Location = new System.Drawing.Point(176, 216);
+            this.linkKhachHang.Location = new System.Drawing.Point(198, 216);
             this.linkKhachHang.Name = "linkKhachHang";
-            this.linkKhachHang.Size = new System.Drawing.Size(120, 21);
+            this.linkKhachHang.Size = new System.Drawing.Size(96, 19);
             this.linkKhachHang.TabIndex = 11;
             this.linkKhachHang.TabStop = true;
             this.linkKhachHang.Text = "Khách hàng";
@@ -190,9 +197,9 @@
             this.linkNhanVien.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.linkNhanVien.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.linkNhanVien.LinkColor = System.Drawing.Color.Navy;
-            this.linkNhanVien.Location = new System.Drawing.Point(48, 216);
+            this.linkNhanVien.Location = new System.Drawing.Point(59, 216);
             this.linkNhanVien.Name = "linkNhanVien";
-            this.linkNhanVien.Size = new System.Drawing.Size(102, 21);
+            this.linkNhanVien.Size = new System.Drawing.Size(83, 19);
             this.linkNhanVien.TabIndex = 9;
             this.linkNhanVien.TabStop = true;
             this.linkNhanVien.Text = "Nhân viên";
@@ -216,7 +223,7 @@
             this.linkKho.LinkColor = System.Drawing.Color.Navy;
             this.linkKho.Location = new System.Drawing.Point(218, 108);
             this.linkKho.Name = "linkKho";
-            this.linkKho.Size = new System.Drawing.Size(44, 21);
+            this.linkKho.Size = new System.Drawing.Size(38, 19);
             this.linkKho.TabIndex = 7;
             this.linkKho.TabStop = true;
             this.linkKho.Text = "Kho";
@@ -238,9 +245,9 @@
             this.linkBanHang.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.linkBanHang.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.linkBanHang.LinkColor = System.Drawing.Color.Navy;
-            this.linkBanHang.Location = new System.Drawing.Point(328, 108);
+            this.linkBanHang.Location = new System.Drawing.Point(347, 108);
             this.linkBanHang.Name = "linkBanHang";
-            this.linkBanHang.Size = new System.Drawing.Size(100, 21);
+            this.linkBanHang.Size = new System.Drawing.Size(79, 19);
             this.linkBanHang.TabIndex = 5;
             this.linkBanHang.TabStop = true;
             this.linkBanHang.Text = "Bán hàng";
@@ -263,9 +270,9 @@
             this.linkHangHoa.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.linkHangHoa.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.linkHangHoa.LinkColor = System.Drawing.Color.Navy;
-            this.linkHangHoa.Location = new System.Drawing.Point(48, 108);
+            this.linkHangHoa.Location = new System.Drawing.Point(59, 108);
             this.linkHangHoa.Name = "linkHangHoa";
-            this.linkHangHoa.Size = new System.Drawing.Size(99, 21);
+            this.linkHangHoa.Size = new System.Drawing.Size(80, 19);
             this.linkHangHoa.TabIndex = 1;
             this.linkHangHoa.TabStop = true;
             this.linkHangHoa.Text = "Hàng hóa";
@@ -280,13 +287,6 @@
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox7.TabIndex = 3;
             this.pictureBox7.TabStop = false;
-            // 
-            // thoátToolStripMenuItem
-            // 
-            this.thoátToolStripMenuItem.Name = "thoátToolStripMenuItem";
-            this.thoátToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
-            this.thoátToolStripMenuItem.Text = "Thoát";
-            this.thoátToolStripMenuItem.Click += new System.EventHandler(this.thoátToolStripMenuItem_Click);
             // 
             // frmTrangChu
             // 

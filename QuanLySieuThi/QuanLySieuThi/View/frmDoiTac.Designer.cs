@@ -55,6 +55,7 @@
             this.btn_SuaDT = new System.Windows.Forms.Button();
             this.btn_ThemDT = new System.Windows.Forms.Button();
             this.btn_showDT = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -67,6 +68,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(869, 196);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // label1
             // 
@@ -253,7 +255,7 @@
             this.groupBox2.Controls.Add(this.btn_showDT);
             this.groupBox2.Location = new System.Drawing.Point(713, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(141, 255);
+            this.groupBox2.Size = new System.Drawing.Size(141, 303);
             this.groupBox2.TabIndex = 22;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Chức năng";
@@ -266,6 +268,7 @@
             this.btn_XoaDT.TabIndex = 3;
             this.btn_XoaDT.Text = "Xóa";
             this.btn_XoaDT.UseVisualStyleBackColor = true;
+            this.btn_XoaDT.Click += new System.EventHandler(this.btn_XoaDT_Click);
             // 
             // btn_SuaDT
             // 
@@ -275,6 +278,7 @@
             this.btn_SuaDT.TabIndex = 2;
             this.btn_SuaDT.Text = "Sửa";
             this.btn_SuaDT.UseVisualStyleBackColor = true;
+            this.btn_SuaDT.Click += new System.EventHandler(this.btn_SuaDT_Click);
             // 
             // btn_ThemDT
             // 
@@ -284,6 +288,7 @@
             this.btn_ThemDT.TabIndex = 1;
             this.btn_ThemDT.Text = "Thêm";
             this.btn_ThemDT.UseVisualStyleBackColor = true;
+            this.btn_ThemDT.Click += new System.EventHandler(this.btn_ThemDT_Click);
             // 
             // btn_showDT
             // 
@@ -295,12 +300,23 @@
             this.btn_showDT.UseVisualStyleBackColor = true;
             this.btn_showDT.Click += new System.EventHandler(this.btn_showDT_Click);
             // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(742, 278);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(89, 32);
+            this.btnSave.TabIndex = 23;
+            this.btnSave.Text = "Lưu";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
             // frmDoiTac
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(871, 528);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.textBox9);
@@ -347,5 +363,6 @@
         private System.Windows.Forms.Button btn_SuaDT;
         private System.Windows.Forms.Button btn_ThemDT;
         private System.Windows.Forms.Button btn_showDT;
+        private System.Windows.Forms.Button btnSave;
     }
 }
