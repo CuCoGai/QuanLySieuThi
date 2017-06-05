@@ -75,6 +75,7 @@ namespace QuanLySieuThi.View
                 dt.SdtNguoiDaiDien = this.textBoxSDTNgDD.Text;
             if (this.textBoxStatus.Text.Length != 0)
                 dt.Status = Int32.Parse(textBoxStatus.Text);
+            db.SaveChanges();
 
         }
 
