@@ -77,7 +77,9 @@
             this.cmb_chucvu.FormattingEnabled = true;
             this.cmb_chucvu.Location = new System.Drawing.Point(198, 209);
             this.cmb_chucvu.Name = "cmb_chucvu";
-            this.cmb_chucvu.Size = new System.Drawing.Size(209, 21);
+
+            this.cmb_chucvu.Size = new System.Drawing.Size(214, 21);
+
             this.cmb_chucvu.TabIndex = 13;
             // 
             // lbl_chucvu
@@ -93,7 +95,9 @@
             // 
             this.dtk_ngaysinh.Location = new System.Drawing.Point(198, 168);
             this.dtk_ngaysinh.Name = "dtk_ngaysinh";
-            this.dtk_ngaysinh.Size = new System.Drawing.Size(209, 20);
+
+            this.dtk_ngaysinh.Size = new System.Drawing.Size(214, 20);
+
             this.dtk_ngaysinh.TabIndex = 11;
             // 
             // lbl_ngaysinh
@@ -110,7 +114,9 @@
             this.cmb_gioitinh.FormattingEnabled = true;
             this.cmb_gioitinh.Location = new System.Drawing.Point(198, 85);
             this.cmb_gioitinh.Name = "cmb_gioitinh";
-            this.cmb_gioitinh.Size = new System.Drawing.Size(209, 21);
+
+            this.cmb_gioitinh.Size = new System.Drawing.Size(214, 21);
+
             this.cmb_gioitinh.TabIndex = 9;
             // 
             // lbl_gioitinh
@@ -126,7 +132,9 @@
             // 
             this.txt_diachi.Location = new System.Drawing.Point(198, 126);
             this.txt_diachi.Name = "txt_diachi";
-            this.txt_diachi.Size = new System.Drawing.Size(209, 20);
+
+            this.txt_diachi.Size = new System.Drawing.Size(214, 20);
+
             this.txt_diachi.TabIndex = 7;
             // 
             // lbl_diachi
@@ -142,7 +150,9 @@
             // 
             this.txt_hoten.Location = new System.Drawing.Point(198, 51);
             this.txt_hoten.Name = "txt_hoten";
-            this.txt_hoten.Size = new System.Drawing.Size(209, 20);
+
+            this.txt_hoten.Size = new System.Drawing.Size(214, 20);
+
             this.txt_hoten.TabIndex = 5;
             // 
             // lbl_hoten
@@ -158,7 +168,9 @@
             // 
             this.txt_manv.Location = new System.Drawing.Point(198, 16);
             this.txt_manv.Name = "txt_manv";
-            this.txt_manv.Size = new System.Drawing.Size(209, 20);
+
+            this.txt_manv.Size = new System.Drawing.Size(214, 20);
+
             this.txt_manv.TabIndex = 3;
             this.txt_manv.Visible = false;
             // 

@@ -73,7 +73,7 @@ namespace QuanLySieuThi.View
         }
         private void btn_ok_Click(object sender, EventArgs e)
         {
-
+            
             int ma = Int32.Parse(txt_manv.Text);
             var nv = db.NhanViens.FirstOrDefault(x=>x.MaNv == ma);
             var cv = db.ChucVus.FirstOrDefault(s => s.MaChucVu == nv.MaChucVu);
