@@ -26,7 +26,7 @@ namespace QuanLySieuThi.View
             dgv_nhanvien = dt;
         }
 
-
+        //load dữ liệu lên form
 
         private void frmNhanVien_Load(object sender, EventArgs e)
         {

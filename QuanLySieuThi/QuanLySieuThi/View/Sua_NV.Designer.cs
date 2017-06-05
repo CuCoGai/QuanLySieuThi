@@ -39,12 +39,12 @@
             this.lbl_diachi = new System.Windows.Forms.Label();
             this.txt_hoten = new System.Windows.Forms.TextBox();
             this.lbl_hoten = new System.Windows.Forms.Label();
+            this.txt_manv = new System.Windows.Forms.TextBox();
+            this.lb_manv = new System.Windows.Forms.Label();
             this.btn_brown = new System.Windows.Forms.Button();
             this.ptb_anh = new System.Windows.Forms.PictureBox();
             this.btn_cancel = new System.Windows.Forms.Button();
             this.btn_ok = new System.Windows.Forms.Button();
-            this.txt_manv = new System.Windows.Forms.TextBox();
-            this.lb_manv = new System.Windows.Forms.Label();
             this.grb_thongtinnhanvien.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptb_anh)).BeginInit();
             this.SuspendLayout();
@@ -77,7 +77,7 @@
             this.cmb_chucvu.FormattingEnabled = true;
             this.cmb_chucvu.Location = new System.Drawing.Point(198, 209);
             this.cmb_chucvu.Name = "cmb_chucvu";
-            this.cmb_chucvu.Size = new System.Drawing.Size(170, 21);
+            this.cmb_chucvu.Size = new System.Drawing.Size(214, 21);
             this.cmb_chucvu.TabIndex = 13;
             // 
             // lbl_chucvu
@@ -93,7 +93,7 @@
             // 
             this.dtk_ngaysinh.Location = new System.Drawing.Point(198, 168);
             this.dtk_ngaysinh.Name = "dtk_ngaysinh";
-            this.dtk_ngaysinh.Size = new System.Drawing.Size(170, 20);
+            this.dtk_ngaysinh.Size = new System.Drawing.Size(214, 20);
             this.dtk_ngaysinh.TabIndex = 11;
             // 
             // lbl_ngaysinh
@@ -110,7 +110,7 @@
             this.cmb_gioitinh.FormattingEnabled = true;
             this.cmb_gioitinh.Location = new System.Drawing.Point(198, 85);
             this.cmb_gioitinh.Name = "cmb_gioitinh";
-            this.cmb_gioitinh.Size = new System.Drawing.Size(170, 21);
+            this.cmb_gioitinh.Size = new System.Drawing.Size(214, 21);
             this.cmb_gioitinh.TabIndex = 9;
             // 
             // lbl_gioitinh
@@ -126,7 +126,7 @@
             // 
             this.txt_diachi.Location = new System.Drawing.Point(198, 123);
             this.txt_diachi.Name = "txt_diachi";
-            this.txt_diachi.Size = new System.Drawing.Size(170, 20);
+            this.txt_diachi.Size = new System.Drawing.Size(214, 20);
             this.txt_diachi.TabIndex = 7;
             // 
             // lbl_diachi
@@ -142,7 +142,7 @@
             // 
             this.txt_hoten.Location = new System.Drawing.Point(198, 51);
             this.txt_hoten.Name = "txt_hoten";
-            this.txt_hoten.Size = new System.Drawing.Size(170, 20);
+            this.txt_hoten.Size = new System.Drawing.Size(214, 20);
             this.txt_hoten.TabIndex = 5;
             // 
             // lbl_hoten
@@ -153,6 +153,24 @@
             this.lbl_hoten.Size = new System.Drawing.Size(58, 13);
             this.lbl_hoten.TabIndex = 4;
             this.lbl_hoten.Text = "Họ và Tên";
+            // 
+            // txt_manv
+            // 
+            this.txt_manv.Location = new System.Drawing.Point(198, 16);
+            this.txt_manv.Name = "txt_manv";
+            this.txt_manv.Size = new System.Drawing.Size(214, 20);
+            this.txt_manv.TabIndex = 3;
+            this.txt_manv.Visible = false;
+            // 
+            // lb_manv
+            // 
+            this.lb_manv.AutoSize = true;
+            this.lb_manv.Location = new System.Drawing.Point(134, 19);
+            this.lb_manv.Name = "lb_manv";
+            this.lb_manv.Size = new System.Drawing.Size(40, 13);
+            this.lb_manv.TabIndex = 2;
+            this.lb_manv.Text = "Mã NV";
+            this.lb_manv.Visible = false;
             // 
             // btn_brown
             // 
@@ -191,24 +209,6 @@
             this.btn_ok.Text = "OK";
             this.btn_ok.UseVisualStyleBackColor = true;
             this.btn_ok.Click += new System.EventHandler(this.btn_ok_Click);
-            // 
-            // txt_manv
-            // 
-            this.txt_manv.Location = new System.Drawing.Point(198, 16);
-            this.txt_manv.Name = "txt_manv";
-            this.txt_manv.Size = new System.Drawing.Size(170, 20);
-            this.txt_manv.TabIndex = 3;
-            this.txt_manv.Visible = false;
-            // 
-            // lb_manv
-            // 
-            this.lb_manv.AutoSize = true;
-            this.lb_manv.Location = new System.Drawing.Point(134, 19);
-            this.lb_manv.Name = "lb_manv";
-            this.lb_manv.Size = new System.Drawing.Size(40, 13);
-            this.lb_manv.TabIndex = 2;
-            this.lb_manv.Text = "Mã NV";
-            this.lb_manv.Visible = false;
             // 
             // Sua_NV
             // 
