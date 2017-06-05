@@ -1,5 +1,5 @@
 ﻿namespace QuanLySieuThi.View
-{
+{ //
     partial class frmNhanVien
     {
         /// <summary>
