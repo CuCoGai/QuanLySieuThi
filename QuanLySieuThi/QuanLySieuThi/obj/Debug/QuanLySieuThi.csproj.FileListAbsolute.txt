@@ -38,7 +38,6 @@ E:\HVKTQS\KI 2 2017\Thực tập nhóm_TH13\QuanLySieuThi\QuanLySieuThi\QuanLySi
 E:\HVKTQS\KI 2 2017\Thực tập nhóm_TH13\QuanLySieuThi\QuanLySieuThi\QuanLySieuThi\obj\Debug\QuanLySieuThi.View.frmBanHang.resources
 E:\HVKTQS\KI 2 2017\Thực tập nhóm_TH13\QuanLySieuThi\QuanLySieuThi\QuanLySieuThi\obj\Debug\QuanLySieuThi.View.frmDoiTac.resources
 E:\HVKTQS\KI 2 2017\Thực tập nhóm_TH13\QuanLySieuThi\QuanLySieuThi\QuanLySieuThi\obj\Debug\QuanLySieuThi.View.frmHangHoa.resources
-E:\HVKTQS\KI 2 2017\Thực tập nhóm_TH13\QuanLySieuThi\QuanLySieuThi\QuanLySieuThi\obj\Debug\QuanLySieuThi.View.frmKhachHang.resources
 E:\HVKTQS\KI 2 2017\Thực tập nhóm_TH13\QuanLySieuThi\QuanLySieuThi\QuanLySieuThi\obj\Debug\QuanLySieuThi.View.frmKho.resources
 E:\HVKTQS\KI 2 2017\Thực tập nhóm_TH13\QuanLySieuThi\QuanLySieuThi\QuanLySieuThi\obj\Debug\QuanLySieuThi.View.frmNhanVien.resources
 E:\HVKTQS\KI 2 2017\Thực tập nhóm_TH13\QuanLySieuThi\QuanLySieuThi\QuanLySieuThi\obj\Debug\QuanLySieuThi.View.frmTrangChu.resources
@@ -46,3 +45,4 @@ E:\HVKTQS\KI 2 2017\Thực tập nhóm_TH13\QuanLySieuThi\QuanLySieuThi\QuanLySi
 E:\HVKTQS\KI 2 2017\Thực tập nhóm_TH13\QuanLySieuThi\QuanLySieuThi\QuanLySieuThi\obj\Debug\QuanLySieuThi.exe.licenses
 E:\HVKTQS\KI 2 2017\Thực tập nhóm_TH13\QuanLySieuThi\QuanLySieuThi\QuanLySieuThi\obj\Debug\QuanLySieuThi.exe
 E:\HVKTQS\KI 2 2017\Thực tập nhóm_TH13\QuanLySieuThi\QuanLySieuThi\QuanLySieuThi\obj\Debug\QuanLySieuThi.pdb
+E:\HVKTQS\KI 2 2017\Thực tập nhóm_TH13\QuanLySieuThi\QuanLySieuThi\QuanLySieuThi\obj\Debug\QuanLySieuThi.frmKhachHang.resources
