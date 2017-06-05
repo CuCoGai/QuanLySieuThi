@@ -1,5 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="BANHANGSIEUTHIModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="BaoCaoThang">
+    <Key>
+      <PropertyRef Name="MaBaoCao" />
+    </Key>
+    <Property Name="MaBaoCao" Type="bigint" Nullable="false" />
+    <Property Name="ThoiGian" Type="nvarchar" MaxLength="250" />
+    <Property Name="NgayLap" Type="datetime" />
+    <Property Name="MoTa" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="ChiTietBaoCao">
+    <Key>
+      <PropertyRef Name="MaBaoCao" />
+      <PropertyRef Name="MaHang" />
+    </Key>
+    <Property Name="MaBaoCao" Type="bigint" Nullable="false" />
+    <Property Name="MaHang" Type="int" Nullable="false" />
+    <Property Name="TonDau" Type="bigint" />
+    <Property Name="SlNhap" Type="bigint" />
+    <Property Name="SlXuat" Type="bigint" />
+    <Property Name="TonCuoi" Type="bigint" />
+  </EntityType>
   <EntityType Name="ChiTietDonHang">
     <Key>
       <PropertyRef Name="MaDon" />
@@ -152,6 +173,30 @@
     <Property Name="version" Type="int" />
     <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
+  <Association Name="FK__ChiTietBa__MaBao__3552E9B6">
+    <End Role="BaoCaoThang" Type="Self.BaoCaoThang" Multiplicity="1" />
+    <End Role="ChiTietBaoCao" Type="Self.ChiTietBaoCao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BaoCaoThang">
+        <PropertyRef Name="MaBaoCao" />
+      </Principal>
+      <Dependent Role="ChiTietBaoCao">
+        <PropertyRef Name="MaBaoCao" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ChiTietBa__MaHan__36470DEF">
+    <End Role="HangHoa" Type="Self.HangHoa" Multiplicity="1" />
+    <End Role="ChiTietBaoCao" Type="Self.ChiTietBaoCao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HangHoa">
+        <PropertyRef Name="MaHang" />
+      </Principal>
+      <Dependent Role="ChiTietBaoCao">
+        <PropertyRef Name="MaHang" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK__ChiTietDo__MaDon__3F115E1A">
     <End Role="DonHang" Type="Self.DonHang" Multiplicity="1" />
     <End Role="ChiTietDonHang" Type="Self.ChiTietDonHang" Multiplicity="0..1" />
@@ -354,6 +399,8 @@
   </Function>
   <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <EntityContainer Name="BANHANGSIEUTHIModelStoreContainer">
+    <EntitySet Name="BaoCaoThang" EntityType="Self.BaoCaoThang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ChiTietBaoCao" EntityType="Self.ChiTietBaoCao" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ChiTietDonHang" EntityType="Self.ChiTietDonHang" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ChiTietNhap" EntityType="Self.ChiTietNhap" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ChiTietXuat" EntityType="Self.ChiTietXuat" Schema="dbo" store:Type="Tables" />
@@ -367,6 +414,14 @@
     <EntitySet Name="PhieuNhap" EntityType="Self.PhieuNhap" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PhieuXuat" EntityType="Self.PhieuXuat" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__ChiTietBa__MaBao__3552E9B6" Association="Self.FK__ChiTietBa__MaBao__3552E9B6">
+      <End Role="BaoCaoThang" EntitySet="BaoCaoThang" />
+      <End Role="ChiTietBaoCao" EntitySet="ChiTietBaoCao" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ChiTietBa__MaHan__36470DEF" Association="Self.FK__ChiTietBa__MaHan__36470DEF">
+      <End Role="HangHoa" EntitySet="HangHoa" />
+      <End Role="ChiTietBaoCao" EntitySet="ChiTietBaoCao" />
+    </AssociationSet>
     <AssociationSet Name="FK__ChiTietDo__MaDon__3F115E1A" Association="Self.FK__ChiTietDo__MaDon__3F115E1A">
       <End Role="DonHang" EntitySet="DonHang" />
       <End Role="ChiTietDonHang" EntitySet="ChiTietDonHang" />

@@ -111,6 +111,7 @@ namespace QuanLySieuThi.View
             //chỉ cho phép nhập số ở textboxx
             txtSoLuong.KeyPress += new KeyPressEventHandler(txtSoLuong_KeyPress);
             txtVat.KeyPress += new KeyPressEventHandler(txtVat_KeyPress);
+            txtMaBaoCao.KeyPress += new KeyPressEventHandler(txtMaBaoCao_KeyPress);
             txtCk.KeyPress += new KeyPressEventHandler(textBox7_KeyPress);
         }
         private void DgvXemChiTietLoad()
@@ -170,7 +171,8 @@ namespace QuanLySieuThi.View
         private void txtVat_TextChanged(object sender, EventArgs e)
         {
             txtVat.KeyPress += new KeyPressEventHandler(txtVat_KeyPress);
-            txtTongTien.Text = (decimal.Parse(txtTienHangPhieu.Text) * (100 + decimal.Parse(txtVat.Text) - decimal.Parse(txtCk.Text)) / 100).ToString();
+
+            txtTongTien.Text = (decimal.Parse(txtTienHangPhieu.Text) * (100 + decimal.Parse(txtVat.Text) - decimal.Parse(txtCk.Text) / 100)).ToString();
         }
 
         private void btnBoQuaThem_Click(object sender, EventArgs e)
@@ -673,6 +675,7 @@ namespace QuanLySieuThi.View
                     }
                     sửaToolStripMenuItem1_Click(sender, e);
                     tabKho.SelectedTab = tabPageChiTiet;
+                    btnThem.Visible = true;
                     // db.ChiTietNhaps.Remove(query);
                     //dgvXemCt.Rows.RemoveAt(dgvXemCt.CurrentRow.Index);
                     //DanhSoTtDgv(dgvXemCt);
@@ -821,7 +824,7 @@ namespace QuanLySieuThi.View
             cobNhanVien.Enabled = true;
             dateNgayLap.Enabled = true;
             cobPhieu.Enabled = false;
-            dgvXemCt.DataSource=null;
+            dgvXemCt.DataSource = null;
             groupThemMatHang.Visible = true;
             groupMatHang.Visible = true;
             groupThem.Visible = true;
@@ -839,6 +842,144 @@ namespace QuanLySieuThi.View
             tabKho.SelectedTab = tabPageThongTin;
             cobPhieu.Text = "Phiếu xuất";
             ThemPhieu();
+        }
+
+        private void btnBaoCao_Click(object sender, EventArgs e)
+        {
+            labBaoCao.Text = "Báo cáo tháng " + dateBaoCao.Value.Month + " năm " + dateBaoCao.Value.Year;
+        }
+
+        private void textBox1_MouseClick(object sender, MouseEventArgs e)
+        {
+            txtMaBaoCao.Text = null;
+        }
+
+        private string TimBaoCaoThangTruoc(DateTime ngayLap)
+        {
+            var query = db.BaoCaoThangs.ToList();
+            string thang=null;
+            string nam = null;
+            foreach (var item in query)
+            {
+
+                if (ngayLap.Month == 1)
+                {
+                    thang = "12";
+                    nam = (ngayLap.Year - 1).ToString();
+                }
+                else
+                {
+                    thang = (ngayLap.Month - 1).ToString();
+                }
+            }
+            string chuoi=nam+thang;
+            return chuoi;
+        }
+        private int TimTongNhap(DateTime thang, int maHang)
+        {
+            int soLuong = 0;
+            var hang =(from s in db.ChiTietNhaps
+                where
+                    (s.MaHang == maHang && s.PhieuNhap.NgayNhap.Value.Month == thang.Month &&
+                     s.PhieuNhap.NgayNhap.Value.Year == thang.Year)
+                select new { so=s.SoLuong}).ToList();
+            foreach (var item in hang)
+            {
+                soLuong = soLuong + int.Parse(item.so.ToString());
+            }
+            return soLuong;
+        }
+        private int TimTongXuat(DateTime thang, int maHang)
+        {
+            int soLuong = 0;
+            var hang = (from s in db.ChiTietXuats
+                        where
+                            (s.MaHang == maHang && s.PhieuXuat.NgayXuat.Value.Month == thang.Month &&
+                             s.PhieuXuat.NgayXuat.Value.Year == thang.Year)
+                        select new { so = s.SoLuong }).ToList();
+            foreach (var item in hang)
+            {
+                soLuong = soLuong + int.Parse(item.so.ToString());
+            }
+            return soLuong;
+        }
+        private void btnTaoBaoCao_Click(object sender, EventArgs e)
+        {
+            BaoCaoThang bc = new BaoCaoThang();
+            bc.ThoiGian = "Tháng " +dateThemBc.Value.Month + " năm " + dateThemBc.Value.Year;
+            bc.NgayLap = dateThemBc.Value;
+            bc.MoTa = txtGhiChuBc.Text;
+            bc.MaBaoCao = int.Parse(txtMaBaoCao.Text);
+            db.BaoCaoThangs.Add(bc);
+            //string thangTruoc=TimBaoCaoThangTruoc(dateThemBc.Value);
+            //if(thangTruoc==null)
+            //{
+                var hang = from s in db.HangHoas select s;
+                foreach (var item in hang.ToList())
+                {
+                    ChiTietBaoCao detail = new ChiTietBaoCao();
+                    detail.MaBaoCao = int.Parse(txtMaBaoCao.Text);
+                    detail.MaHang = item.MaHang;
+                    detail.TonCuoi = item.SoLuong;
+                    detail.SlNhap = TimTongNhap(dateThemBc.Value, item.MaHang);
+                    detail.SlXuat= TimTongXuat(dateThemBc.Value, item.MaHang);
+                    detail.TonCuoi = item.SoLuong-TimTongNhap(dateThemBc.Value, item.MaHang) -
+                                     TimTongXuat(dateThemBc.Value, item.MaHang);
+                    db.ChiTietBaoCaos.Add(detail);
+                }
+           // }
+            try
+            {
+                db.SaveChanges();
+                var baoCao = from a in db.ChiTietBaoCaos
+                    where (a.MaBaoCao == int.Parse(txtMaBaoCao.Text))
+                    select
+                        new
+                        {
+                            maHang = a.MaHang,
+                            tenHang = a.HangHoa.TenHang,
+                            tonDau = a.TonDau,
+                            sln = a.SlNhap,
+                            slx = a.SlXuat,
+                            tonCuoi = a.TonCuoi
+                        };
+                dgvBaoCao.DataSource = baoCao.ToList();
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("KhÔng thể tạo báo cáo này!");
+            }
+               
+
+
+
+        }
+
+        private void txtMaBaoCao_TextChanged(object sender, EventArgs e)
+        {
+            txtMaBaoCao.KeyPress += new KeyPressEventHandler(txtMaBaoCao_KeyPress);
+        }
+
+        private void txtMaBaoCao_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void dateThemBc_ValueChanged(object sender, EventArgs e)
+        {
+            txtMaBaoCao.Text = dateThemBc.Value.Year.ToString() + dateThemBc.Value.Month.ToString();
+        }
+
+        private void dateNgayLap_ValueChanged(object sender, EventArgs e)
+        {
+            txtMaHienThi.Text = dateNgayLap.Value.Year.ToString() + dateNgayLap.Value.Month.ToString() + dateNgayLap.Value.Day.ToString();
+        }
+
+        private void báoCáoThángToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            tabKho.SelectedTab = tabPageBaoCao;
         }
     }
 }

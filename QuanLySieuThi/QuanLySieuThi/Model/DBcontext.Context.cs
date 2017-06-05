@@ -28,6 +28,8 @@ namespace QuanLySieuThi.Model
             throw new UnintentionalCodeFirstException();
         }
     
+        public DbSet<BaoCaoThang> BaoCaoThangs { get; set; }
+        public DbSet<ChiTietBaoCao> ChiTietBaoCaos { get; set; }
         public DbSet<ChiTietDonHang> ChiTietDonHangs { get; set; }
         public DbSet<ChiTietNhap> ChiTietNhaps { get; set; }
         public DbSet<ChiTietXuat> ChiTietXuats { get; set; }

@@ -16,6 +16,7 @@ namespace QuanLySieuThi.Model
     {
         public HangHoa()
         {
+            this.ChiTietBaoCaos = new HashSet<ChiTietBaoCao>();
             this.ChiTietDonHangs = new HashSet<ChiTietDonHang>();
             this.ChiTietNhaps = new HashSet<ChiTietNhap>();
             this.ChiTietXuats = new HashSet<ChiTietXuat>();
@@ -33,6 +34,7 @@ namespace QuanLySieuThi.Model
         public Nullable<int> SoLuong { get; set; }
         public Nullable<decimal> GiaSi { get; set; }
     
+        public virtual ICollection<ChiTietBaoCao> ChiTietBaoCaos { get; set; }
         public virtual ICollection<ChiTietDonHang> ChiTietDonHangs { get; set; }
         public virtual ICollection<ChiTietNhap> ChiTietNhaps { get; set; }
         public virtual ICollection<ChiTietXuat> ChiTietXuats { get; set; }

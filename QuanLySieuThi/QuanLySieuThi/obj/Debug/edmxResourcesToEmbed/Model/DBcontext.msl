@@ -1,6 +1,28 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="BANHANGSIEUTHIModelStoreContainer" CdmEntityContainer="BANHANGSIEUTHIEntities">
+    <EntitySetMapping Name="BaoCaoThangs">
+      <EntityTypeMapping TypeName="BANHANGSIEUTHIModel.BaoCaoThang">
+        <MappingFragment StoreEntitySet="BaoCaoThang">
+          <ScalarProperty Name="MaBaoCao" ColumnName="MaBaoCao" />
+          <ScalarProperty Name="ThoiGian" ColumnName="ThoiGian" />
+          <ScalarProperty Name="NgayLap" ColumnName="NgayLap" />
+          <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ChiTietBaoCaos">
+      <EntityTypeMapping TypeName="BANHANGSIEUTHIModel.ChiTietBaoCao">
+        <MappingFragment StoreEntitySet="ChiTietBaoCao">
+          <ScalarProperty Name="MaBaoCao" ColumnName="MaBaoCao" />
+          <ScalarProperty Name="MaHang" ColumnName="MaHang" />
+          <ScalarProperty Name="TonDau" ColumnName="TonDau" />
+          <ScalarProperty Name="SlNhap" ColumnName="SlNhap" />
+          <ScalarProperty Name="SlXuat" ColumnName="SlXuat" />
+          <ScalarProperty Name="TonCuoi" ColumnName="TonCuoi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="ChiTietDonHangs">
       <EntityTypeMapping TypeName="BANHANGSIEUTHIModel.ChiTietDonHang">
         <MappingFragment StoreEntitySet="ChiTietDonHang">
